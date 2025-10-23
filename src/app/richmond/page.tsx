@@ -1,11 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
-import Header from "@/components/header";
+import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 
 // Lazy load components
 const TrustBadges = dynamic(() => import("@/components/trust-badges"), {
@@ -27,6 +30,19 @@ export const metadata = {
 };
 
 export default function RichmondPage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   const services = [
     {
       name: "Junk Removal",
@@ -86,7 +102,7 @@ export default function RichmondPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
-      <Header />
+      <HeaderWorking />
 
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
@@ -257,9 +273,9 @@ export default function RichmondPage() {
                     </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
               </CardContent>
@@ -296,9 +312,9 @@ export default function RichmondPage() {
                     </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
               </CardContent>
@@ -335,9 +351,9 @@ export default function RichmondPage() {
                     </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
               </CardContent>
@@ -374,9 +390,9 @@ export default function RichmondPage() {
                     </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
               </CardContent>
@@ -413,9 +429,9 @@ export default function RichmondPage() {
                     </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
               </CardContent>
@@ -452,13 +468,13 @@ export default function RichmondPage() {
                       </li>
                   </ul>
                   <Link href="/contact">
-                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                      FREE QUOTE
-                    </Button>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
                   </Link>
                 </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
           </div>
         </div>
       </section>
@@ -500,9 +516,9 @@ export default function RichmondPage() {
               Our team respects the architectural integrity while providing efficient junk removal services.
             </p>
             <p className="text-center mt-6 text-sm md:text-base text-gray-600">
-              Don't see your neighborhood? We serve all of Richmond and surrounding areas. 
-              <Link href="#contact" className="text-[#1e40af] font-semibold ml-1">Contact us to confirm service in your area →</Link>
-            </p>
+            Don't see your neighborhood? We serve all of Richmond and surrounding areas. 
+            <Link href="#contact" className="text-[#1e40af] font-semibold ml-1">Contact us to confirm service in your area →</Link>
+          </p>
           </div>
         </div>
       </section>

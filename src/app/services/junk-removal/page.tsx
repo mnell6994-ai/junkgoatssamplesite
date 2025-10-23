@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
-import Header from "@/components/header";
+import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import dynamic from "next/dynamic";
 
@@ -36,7 +36,7 @@ export default function JunkRemovalPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
-      <Header />
+      <HeaderWorking />
 
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
