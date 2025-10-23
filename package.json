@@ -1,6 +1,6 @@
 {
   "name": "power-washing-website-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Professional power washing website template with client dashboard and multi-site management",
   "private": false,
   "keywords": ["power-washing", "website-template", "nextjs", "supabase", "cleaning-services"],
