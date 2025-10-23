@@ -5,6 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Check, Phone, Mail, Clock, Shield, Award } from "lucide-react";
 import Header from "@/components/header";
+import GoogleReviewsCarousel from "@/components/google-reviews-carousel";
+import dynamic from "next/dynamic";
+
+// Lazy load components
+const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple"), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg"></div>
+});
 
 export const metadata = {
   title: "Power Washing FAQ Richmond VA | Common Questions & Answers",
@@ -166,31 +173,44 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Quick Contact */}
-      <section className="py-16 bg-[#f3f4f6]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-[#1e40af] mb-12">
-            Still Have Questions?
+      {/* Contact Form & Reviews Section */}
+      <section className="py-16 bg-[#f8f9fa]">
+        <div className="container mx-auto max-w-6xl px-4">
+          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+            <span className="text-[#1e40af]">STILL HAVE</span>{" "}
+            <span className="text-[#FFA500] italic">QUESTIONS?</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white text-center p-6">
-              <Phone className="w-12 h-12 text-[#dc2626] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#1e40af] mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-4">Speak directly with our team</p>
-              <p className="text-lg font-semibold text-[#dc2626]">(804) 555-0123</p>
-            </Card>
-            <Card className="bg-white text-center p-6">
-              <Mail className="w-12 h-12 text-[#dc2626] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#1e40af] mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-4">Send us your questions</p>
-              <p className="text-lg font-semibold text-[#dc2626]">info@richmondpowerwashpro.com</p>
-            </Card>
-            <Card className="bg-white text-center p-6">
-              <Clock className="w-12 h-12 text-[#dc2626] mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-[#1e40af] mb-2">Business Hours</h3>
-              <p className="text-gray-600 mb-4">We're here to help</p>
-              <p className="text-lg font-semibold text-[#dc2626]">Mon-Sat: 7AM-7PM</p>
-            </Card>
+          
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <ContactFormSimple />
+            </div>
+            
+            {/* Google Reviews Section */}
+            <div className="space-y-8">
+              {/* Google Reviews Image */}
+              <div className="text-center">
+                <Image
+                  src="/images/google five star rating 2.png"
+                  alt="Google 5 Star Reviews"
+                  width={200}
+                  height={60}
+                  className="mx-auto mb-4"
+                />
+                <h3 className="text-3xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
+                  WHAT OUR <span className="text-[#FFA500] italic">CUSTOMERS</span> SAY
+                </h3>
+                <p className="text-lg text-gray-600 mb-6">
+                  Don't just take our word for it - see what our satisfied customers have to say about our professional power washing services.
+                </p>
+              </div>
+              
+              {/* Google Reviews Carousel */}
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <GoogleReviewsCarousel />
+              </div>
+            </div>
           </div>
         </div>
       </section>
