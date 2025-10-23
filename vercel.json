@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd sauna-swift\\ copy && npm install && npm run build",
+  "outputDirectory": "sauna-swift copy/.next",
+  "installCommand": "cd sauna-swift\\ copy && npm install",
+  "framework": "nextjs",
+  "rootDirectory": "sauna-swift copy"
+}
