@@ -13,17 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mobile Sauna Rentals | SaunaSwift - Premium Wood-Burning Saunas in Virginia",
-  description: "Premium mobile sauna rentals for personal wellness, corporate events, and special occasions in Virginia. Book your authentic wood-burning sauna experience today.",
-  keywords: "mobile sauna rental, sauna rental Virginia, wood burning sauna, event sauna rental, corporate wellness sauna, Richmond sauna, Charlottesville sauna, Williamsburg sauna, Fredericksburg sauna",
+  title: "Junk Goats Junk Removal | Professional Junk Removal Services in Richmond VA",
+  description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond",
   openGraph: {
-    title: "SaunaSwift - Mobile Sauna Rentals in Virginia",
-    description: "Premium mobile sauna rentals for individuals, companies, and events. Experience authentic wood-burning saunas in Richmond, Charlottesville, Fredericksburg, and Williamsburg.",
+    title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
+    description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1544367567-0d27e6ffb351?w=1200&h=630&fit=crop",
-        alt: "Premium mobile sauna rental experience",
+        url: "/images/junk-goats-logo.png",
+        alt: "Junk Goats Junk Removal Services",
         width: 1200,
         height: 630,
       },
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SaunaSwift - Mobile Sauna Rentals in Virginia",
-    description: "Premium mobile sauna rentals for individuals, companies, and events. Experience authentic wood-burning saunas across Virginia.",
-    images: ["https://images.unsplash.com/photo-1544367567-0d27e6ffb351?w=1200&h=630&fit=crop"],
+    title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
+    description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+    images: ["/images/junk-goats-logo.png"],
   },
   robots: {
     index: true,
@@ -59,13 +59,13 @@ export default function RootLayout({
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "SaunaSwift",
-    "url": "https://saunaswift.com",
-    "logo": "https://saunaswift.com/logo.png",
-    "description": "Premium mobile sauna rentals across Virginia",
-    "areaServed": ["Richmond, VA", "Charlottesville, VA", "Fredericksburg, VA", "Williamsburg, VA"],
-    "telephone": "+1-804-555-0123",
-    "email": "info@saunaswift.com",
+    "name": "Junk Goats Junk Removal",
+    "url": "https://junkgoatsrichmond.com",
+    "logo": "/images/junk-goats-logo.png",
+    "description": "Professional junk removal services in Richmond, VA and surrounding areas",
+    "areaServed": ["Richmond, VA", "Henrico, VA", "Chesterfield, VA", "Midlothian, VA", "Mechanicsville, VA"],
+    "telephone": "+1-804-494-7999",
+    "email": "info@junkgoatsrichmond.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Richmond",
@@ -74,9 +74,9 @@ export default function RootLayout({
       "addressCountry": "US"
     },
     "sameAs": [
-      "https://www.facebook.com/saunaswift",
-      "https://www.instagram.com/saunaswift",
-      "https://www.linkedin.com/company/saunaswift"
+      "https://www.facebook.com/junkgoatsrichmond",
+      "https://www.instagram.com/junkgoatsrichmond",
+      "https://www.linkedin.com/company/junk-goats-junk-removal"
     ]
   };
 
