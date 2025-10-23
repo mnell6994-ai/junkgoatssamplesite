@@ -353,8 +353,8 @@ export default function HouseWashingPage() {
             <Button size="lg" className="bg-white text-[#1e40af] hover:bg-gray-100 text-lg px-8 py-4">
               Get Free Estimate
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#1e40af] text-lg px-8 py-4">
-              Call (804) 555-0123
+            <Button size="lg" className="bg-[#FFA500] hover:bg-[#FF8C00] text-white text-lg px-8 py-4 font-black uppercase tracking-wide italic">
+              CALL (804) 555-0123
             </Button>
           </div>
         </div>
@@ -433,7 +433,7 @@ export default function HouseWashingPage() {
               <Button size="lg" className="bg-white text-[#1e40af] hover:bg-gray-100 text-lg px-8 py-3 font-black uppercase tracking-wide italic">
                 GET FREE ESTIMATE
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#1e40af] text-lg px-8 py-3 font-black uppercase tracking-wide italic">
+              <Button size="lg" className="bg-[#FFA500] hover:bg-[#FF8C00] text-white text-lg px-8 py-3 font-black uppercase tracking-wide italic">
                 CALL (804) 555-0123
               </Button>
             </div>
