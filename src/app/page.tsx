@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import GoogleReviewsCarousel from "@/components/google-reviews-carousel";
 import Footer from "@/components/footer";
 import AnimatedTruck from "@/components/animated-truck";
-import Header from "@/components/header";
+// import HeaderTest from "@/components/header-test";
 
 // Lazy load heavy components
 const ContactForm = dynamic(() => import("@/components/contact-form"), {
@@ -36,16 +36,25 @@ const ReviewsCarousel = dynamic(() => import("@/components/reviews-carousel"), {
 export default function Home() {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
+
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
     
     checkMobile();
     window.addEventListener('resize', checkMobile);
+    window.addEventListener('scroll', handleScroll);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Video testimonials data - actual YouTube video IDs
@@ -105,7 +114,116 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
-      <Header />
+      {/* Simple Working Header */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrollY > 100 ? 'bg-[#1e40af] shadow-lg' : 'bg-transparent'
+      }`}>
+        <div className="w-full flex justify-between items-center px-8 py-1">
+            <Link href="/" className="flex items-center">
+              <Image 
+              src="/images/junk-goats-logo.png" 
+              alt="Junk Goats Junk Removal" 
+              width={200}
+              height={60}
+                className="h-16 w-auto"
+                priority
+              />
+            </Link>
+          
+            <nav className="hidden md:flex gap-8">
+            <div className="relative group">
+              <button className="text-white font-black uppercase tracking-wide hover:text-gray-200 flex items-center gap-1">
+                  SERVICES
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link href="/services/junk-removal" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Junk Removal
+                </Link>
+                <Link href="/services/furniture-removal" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Furniture Removal
+                </Link>
+                <Link href="/services/estate-cleanout" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Estate Cleanout
+                    </Link>
+                <Link href="/services/construction-debris" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Construction Debris
+                    </Link>
+                <Link href="/services/appliance-removal" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Appliance Removal
+                    </Link>
+                <Link href="/services/yard-waste-removal" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Yard Waste Removal
+                    </Link>
+                <Link href="/services/commercial-cleanout" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Commercial Cleanout
+                    </Link>
+                <Link href="/services/office-cleanout" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                  Office Cleanout
+                    </Link>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <button className="text-white font-black uppercase tracking-wide hover:text-gray-200 flex items-center gap-1">
+                  SERVICE AREAS
+                <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                </button>
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <Link href="/richmond" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                        Richmond, VA
+                    </Link>
+                <Link href="/henrico" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                        Henrico, VA
+                    </Link>
+                <Link href="/chesterfield" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                        Chesterfield, VA
+                    </Link>
+                <Link href="/midlothian" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                        Midlothian, VA
+                    </Link>
+                <Link href="/mechanicsville" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors">
+                        Mechanicsville, VA
+                    </Link>
+              </div>
+            </div>
+            
+            <Link href="/how-it-works" className="text-white font-black uppercase tracking-wide hover:text-gray-200">
+              HOW IT WORKS
+              </Link>
+            <Link href="/contact" className="text-white font-black uppercase tracking-wide hover:text-gray-200">
+                CONTACT
+              </Link>
+            </nav>
+          
+          {/* Mobile Menu Button */}
+          <button className="md:hidden text-white p-2">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          
+          <div className="hidden md:flex items-center gap-4">
+            <a href="tel:+18044947999" className="flex items-center gap-2 text-white font-black uppercase tracking-wide italic">
+                <div className="bg-[#dc2626] text-white p-2 rounded-full hover:bg-[#b91c1c] transition-colors">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                </div>
+              <span>(804) 494-7999</span>
+              </a>
+              <Link href="/contact">
+              <button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic px-4 py-2 rounded">
+                  FREE QUOTE
+              </button>
+              </Link>
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
@@ -121,21 +239,21 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="container mx-auto max-w-6xl relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
           <div>
-            <h1 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
               <span className="block">PROFESSIONAL JUNK REMOVAL</span>
               <span className="block">IN RICHMOND, VA</span>
           </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold text-white">
+            <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-semibold text-white">
             Clear your space with our expert junk removal services. Furniture removal, estate cleanouts, yard waste removal, and more. Licensed, insured, and locally owned.
           </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
                 FREE ESTIMATE
             </Button>
             </Link>
-            <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+            <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
               CALL (804) 494-7999
           </Button>
           </div>
@@ -152,44 +270,44 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
               JUNK REMOVAL IN 3 STEPS
             </h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+              <div className="bg-[#1e40af] text-white text-3xl md:text-4xl font-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+              <h3 className="text-xl md:text-2xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
                 STEP 1
               </h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-base md:text-lg text-gray-700">
                 Schedule your service online or over the phone
               </p>
             </div>
 
             <div className="text-center">
-              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+              <div className="bg-[#1e40af] text-white text-3xl md:text-4xl font-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-6">
                 2
               </div>
-              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+              <h3 className="text-xl md:text-2xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
                 STEP 2
               </h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-base md:text-lg text-gray-700">
                 Receive and Approve your no obligation Free Quote
               </p>
             </div>
 
             <div className="text-center">
-              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+              <div className="bg-[#1e40af] text-white text-3xl md:text-4xl font-black rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mx-auto mb-6">
                 3
               </div>
-              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+              <h3 className="text-xl md:text-2xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
                 STEP 3
               </h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-base md:text-lg text-gray-700">
                 Sit back and relax while the Junk Goats load and haul away your unwanted items
               </p>
             </div>
@@ -197,7 +315,7 @@ export default function Home() {
 
           <div className="text-center mt-8">
             <Link href="/contact">
-              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
                 Get Started Today
               </Button>
             </Link>
@@ -213,12 +331,12 @@ export default function Home() {
             <span className="text-[#dc2626]">JUNK GOATS</span>{" "}
             <span className="text-[#1e40af]">JUNK REMOVAL?</span>
           </h2>
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h3 className="text-3xl font-bold text-[#1e40af] mb-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="bg-white rounded-lg p-4 md:p-6 shadow-lg">
+              <h3 className="text-2xl md:text-3xl font-black text-[#1e40af] mb-6">
                         Why Choose Junk Goats?
               </h3>
-              <p className="text-lg text-gray-700 mb-6">
+              <p className="text-base md:text-lg text-gray-700 mb-6">
                         Junk Goats does everything from single item pick ups to entire house clean outs. Whatever size junk removal job you have, the Junk Goats can help. Junk Goats is covered end to end with the proper insurance in order to protect our clients and ourselves in the event anything goes wrong. This allows total peace of mind for our clients when hiring Junk Goats.
               </p>
               <ul className="space-y-3">
@@ -243,7 +361,7 @@ export default function Home() {
                   alt="Google Five Star Rating"
                   width={200}
                   height={100}
-                  className="object-contain"
+                  className="object-contain w-32 md:w-48 lg:w-56"
                 />
               </div>
               
@@ -300,9 +418,9 @@ export default function Home() {
                   className="w-full h-48 object-cover"
                   loading="lazy"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#1e40af] mb-3">{location.name}</h3>
-                  <p className="text-gray-600 mb-3">{location.description}</p>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-black text-[#1e40af] mb-3">{location.name}</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-3">{location.description}</p>
                   <p className="text-[#dc2626] font-semibold mb-3">✓ Available Now</p>
                   <Link href={`/${location.name.toLowerCase().replace(' ', '-')}`} className="text-[#1e40af] font-semibold hover:text-[#dc2626] transition-colors">
                     View {location.name} Services →
@@ -323,7 +441,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tight">
               <span className="text-[#dc2626]">Junk Goats</span> <span className="text-[#1e40af]">Customer Testimonials</span>
           </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               See what our amazing customers have to say about our junk removal services.
             </p>
           </div>
@@ -411,7 +529,7 @@ export default function Home() {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Our Professional Team</h3>
+                  <h3 className="text-xl font-black text-gray-900 mb-2">Our Professional Team</h3>
                   <p className="text-gray-600">
                     Junk Goats Junk Removal provides both residential and commercial junk removal. We understand that our junk removal clients desire a simple, stress-free, and affordable junk removal experience. Our professional and friendly junk removal specialists are trained to provide our clients with exceptional customer service and value.
                   </p>
@@ -429,7 +547,7 @@ export default function Home() {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Friendly Service</h3>
+                  <h3 className="text-xl font-black text-gray-900 mb-2">Friendly Service</h3>
                   <p className="text-gray-600">
                     Our team members are uniformed, friendly, and courteous professionals who ensure every interaction is pleasant and stress-free. We understand that junk removal can be overwhelming, which is why our team goes above and beyond to provide exceptional customer service with a smile.
                   </p>

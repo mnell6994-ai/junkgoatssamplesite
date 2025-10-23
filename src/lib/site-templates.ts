@@ -73,7 +73,7 @@ export const siteTemplates: SiteTemplate[] = [
         {
           name: 'Deck & Fence Cleaning',
           description: 'Restore your deck and fence to like-new condition with our gentle cleaning process.',
-          image: '/images/powerwashing deck.jpg'
+          image: '/images/junk-removal-1.jpg'
         },
         {
           name: 'Concrete Cleaning',

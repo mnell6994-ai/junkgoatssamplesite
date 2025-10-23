@@ -256,9 +256,11 @@ export default function RichmondPage() {
                       Eco-friendly disposal
                     </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -293,9 +295,11 @@ export default function RichmondPage() {
                       Donation options available
                     </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -330,9 +334,11 @@ export default function RichmondPage() {
                       Heavy debris handling
                     </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -367,9 +373,11 @@ export default function RichmondPage() {
                       Responsible disposal
                     </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -404,9 +412,11 @@ export default function RichmondPage() {
                       Family consultation
                     </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -441,9 +451,11 @@ export default function RichmondPage() {
                       Seasonal cleanup
                       </li>
                   </ul>
-                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                    FREE QUOTE
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                      FREE QUOTE
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

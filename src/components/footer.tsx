@@ -42,15 +42,6 @@ export default function Footer() {
               <li><Link href="/chesterfield" className="hover:text-[#FFA500] transition-colors font-semibold">Chesterfield, VA</Link></li>
               <li><Link href="/midlothian" className="hover:text-[#FFA500] transition-colors font-semibold">Midlothian, VA</Link></li>
               <li><Link href="/mechanicsville" className="hover:text-[#FFA500] transition-colors font-semibold">Mechanicsville, VA</Link></li>
-              <li><Link href="/amelia" className="hover:text-[#FFA500] transition-colors font-semibold">Amelia, VA</Link></li>
-              <li><Link href="/ashland" className="hover:text-[#FFA500] transition-colors font-semibold">Ashland, VA</Link></li>
-              <li><Link href="/chester" className="hover:text-[#FFA500] transition-colors font-semibold">Chester, VA</Link></li>
-              <li><Link href="/goochland" className="hover:text-[#FFA500] transition-colors font-semibold">Goochland, VA</Link></li>
-              <li><Link href="/hanover" className="hover:text-[#FFA500] transition-colors font-semibold">Hanover, VA</Link></li>
-              <li><Link href="/hopewell" className="hover:text-[#FFA500] transition-colors font-semibold">Hopewell, VA</Link></li>
-              <li><Link href="/petersburg" className="hover:text-[#FFA500] transition-colors font-semibold">Petersburg, VA</Link></li>
-              <li><Link href="/powhatan" className="hover:text-[#FFA500] transition-colors font-semibold">Powhatan, VA</Link></li>
-              <li><Link href="/sandston" className="hover:text-[#FFA500] transition-colors font-semibold">Sandston, VA</Link></li>
             </ul>
           </div>
           <div>

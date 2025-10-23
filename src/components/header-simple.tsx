@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Phone, ChevronDown, MapPin, Menu, X } from "lucide-react";
 import { useState, useEffect, useRef, useCallback } from "react";
 
-export default function Header() {
+export default function HeaderSimple() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); // Start transparent
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const locationsDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -32,23 +32,35 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
       const shouldBeScrolled = scrollTop > 100;
-      setIsScrolled(shouldBeScrolled);
+      
+      console.log('Header Scroll:', scrollTop, 'Should be scrolled:', shouldBeScrolled);
+      
+      if (shouldBeScrolled !== isScrolled) {
+        console.log('Header state changing to:', shouldBeScrolled);
+        setIsScrolled(shouldBeScrolled);
+      }
     };
 
-    // Add scroll listener
-    window.addEventListener('scroll', handleScroll);
+    // Add multiple event listeners to ensure we catch scroll events
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isScrolled]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'bg-[#1e40af] shadow-lg' : 'bg-transparent'
-    }`} style={{ backgroundColor: isScrolled ? '#1e40af' : 'transparent' }}>
+    <header 
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-blue-600 shadow-lg"
+      style={{ backgroundColor: '#1e40af' }}
+    >
       <div className="w-full">
         <div className="flex justify-between items-center w-full pl-4 pr-4">
           <Link href="/" className="flex items-center">
@@ -61,6 +73,7 @@ export default function Header() {
               priority
             />
           </Link>
+          
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -71,10 +84,13 @@ export default function Header() {
           
           {/* Test Button */}
           <button
-            onClick={() => setIsScrolled(!isScrolled)}
+            onClick={() => {
+              console.log('Button clicked, current state:', isScrolled);
+              setIsScrolled(!isScrolled);
+            }}
             className="hidden md:block bg-red-500 text-white px-2 py-1 text-xs mr-2"
           >
-            Test
+            Test: {isScrolled ? 'ON' : 'OFF'}
           </button>
           
 
@@ -165,7 +181,7 @@ export default function Header() {
                 <ChevronDown className={`w-4 h-4 transition-transform ${isLocationsOpen ? 'rotate-180' : ''}`} />
               </button>
               {isLocationsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50 max-h-96 overflow-y-auto">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
                   <Link 
                     href="/richmond" 
                     className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"

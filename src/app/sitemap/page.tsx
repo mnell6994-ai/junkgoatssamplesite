@@ -43,8 +43,8 @@ export default function SitemapPage() {
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
         <Image
-          src="/images/powerwashing deck.jpg"
-          alt="Richmond Power Washing Pro Sitemap"
+          src="/images/junk-removal-1.jpg"
+          alt="Junk Goats Junk Removal Sitemap"
           fill
           className="object-cover"
           priority
