@@ -1,4 +1,4 @@
-# Power Washing Website Template
+# Power Washing Website Template - Updated for Vercel Deployment
 
 A professional, SEO-optimized website template for power washing and cleaning service businesses. Built with Next.js, Supabase, and Tailwind CSS.
 
