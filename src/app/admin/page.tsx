@@ -18,6 +18,12 @@ export default function AdminDashboard() {
 
   const fetchSubmissions = async () => {
     try {
+      if (!supabase) {
+        setError('Supabase not configured');
+        setSubmissions([]);
+        return;
+      }
+
       const result = await supabase
         .from('contact_submissions')
         .select('*')
@@ -37,6 +43,11 @@ export default function AdminDashboard() {
 
   const updateStatus = async (id: string, status: ContactSubmission['status']) => {
     try {
+      if (!supabase) {
+        console.warn('Supabase not configured');
+        return;
+      }
+
       const { error } = await supabase
         .from('contact_submissions')
         .update({ status })
