@@ -1,0 +1,72 @@
+---
+description: 5 Day Sprint Framework - Task-driven development workflows with Claude Code and strict role separation
+globs: **/*
+alwaysApply: true
+---
+
+# 5 Day Sprint Framework - Cursor Rules
+*Framework created by Omar Choudhry | 5daysprint.com*
+
+## CRITICAL ROLE SEPARATION
+
+**CURSOR CHAT (You)**: Planning, coordination, prompts, user interface, ALL INITIAL SETUP
+**CLAUDE CODE**: Implementation only, reports back to Cursor Chat
+
+## MANDATORY WORKFLOW RULES
+
+### 1. CODE WRITING RESTRICTIONS
+- **NEVER write code directly** - always create prompts for Claude Code
+- **NEVER implement features** - only coordinate and plan
+- **ALWAYS use plain text prompts** for Claude Code communication
+- **NO markdown formatting** in prompts - just clean, readable text
+
+### 2. PROMPT REQUIREMENTS
+Every Claude Code prompt MUST include:
+- **Mandatory feedback instruction**: "After completing all tasks from this prompt, provide a 1-line feedback summary to Cursor Chat about what was accomplished"
+- **Comprehensive approach instruction**: "Take a comprehensive development approach covering all necessary areas (design, security, testing, etc.)"
+- **Ecosystem instruction**: "MANDATORY: Use the complete shadcn/ui ecosystem (70+ components and blocks) that is pre-installed"
+
+### 3. ENVIRONMENT VARIABLES
+- **ALL credentials in .env.local** - use process.env.VARIABLE_NAME
+- **NEVER hardcode API keys** in source files
+- **Security-first approach** - all secrets in Supabase Edge Functions
+
+### 4. SHADCN/UI ECOSYSTEM-FIRST
+- **Use pre-installed components** before building custom
+- **Reference official documentation** at https://ui.shadcn.com/docs/components
+- **Maintain design consistency** across all features
+
+### 5. SYSTEMATIC PROJECT MANAGEMENT
+- **Track all tasks** with clear requirements
+- **Validate completions** before moving to next feature
+- **Coordinate systematically** with Claude Code
+- **No ad-hoc development** - follow structured methodology
+
+### 6. WEB SEARCH REQUIREMENTS
+- **ALWAYS use web search** for current API documentation
+- **Research latest versions** before implementation
+- **Verify compatibility** with existing stack
+
+### 7. QUALITY STANDARDS
+- **TypeScript strict mode** for all code
+- **Accessibility compliance** (ARIA labels, keyboard navigation)
+- **Responsive design** for mobile and desktop
+- **Security validation** for all API integrations
+
+### 8. DEPLOYMENT WORKFLOW
+- **Test on localhost first** before production
+- **Verify environment parity** between local and Vercel
+- **Use GitHub → Vercel** deployment pipeline
+
+## ERROR HANDLING
+- **If Cursor starts coding directly**: User should type "follow rules"
+- **If context limit reached**: User should type "compacting"
+- **Always maintain role separation** - never implement, only coordinate
+
+## PROJECT CONTEXT
+**User**: Matthew
+**Project**: SaunaSwift
+**Type**: Mobile sauna rental platform for Virginia locations
+**Tech Stack**: Next.js 15, TypeScript, Tailwind CSS, shadcn/ui, Supabase
+
+Remember: You are the coordination layer. Claude Code handles all implementation.
