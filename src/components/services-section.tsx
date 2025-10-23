@@ -10,46 +10,46 @@ import Link from "next/link";
 const ServicesSection = memo(() => {
   const services = [
     {
-      title: "🏠 House Washing",
-      description: "Complete exterior house cleaning including siding, brick, stucco, and vinyl. Safe for all surfaces with professional techniques.",
-      features: ["Soft washing for delicate surfaces", "Mold and mildew removal", "Gutter cleaning included"],
-      image: "/images/pressure washing house.jpg",
-      link: "/services/house-washing"
+      title: "Junk Removal",
+      description: "Complete junk removal services for residential and commercial properties. We haul away furniture, appliances, and debris safely and efficiently.",
+      features: ["Same-day service available", "Furniture and appliance removal", "Construction debris cleanup", "Yard waste removal", "Eco-friendly disposal methods"],
+      image: "/images/residential-junk.jpg",
+      link: "/services/junk-removal"
     },
     {
-      title: "🪵 Deck Cleaning", 
-      description: "Restore your deck to like-new condition. We use the right pressure and cleaning solutions for wood surfaces.",
-      features: ["Wood-safe cleaning solutions", "Stain preparation included", "Sealing recommendations"],
-      image: "/images/powerwashing deck.jpg",
-      link: "/services/deck-cleaning"
+      title: "Furniture Removal", 
+      description: "Professional furniture removal services for homes and offices. We safely remove and dispose of old furniture, mattresses, and large items.",
+      features: ["Mattress and furniture removal", "Large item hauling", "Safe disassembly when needed", "Eco-friendly disposal", "Same-day pickup available"],
+      image: "/images/mattress-removal.jpg",
+      link: "/services/furniture-removal"
     },
     {
-      title: "🏗️ Concrete Cleaning",
-      description: "Driveway, sidewalk, and patio cleaning. Remove oil stains, dirt, and grime to restore your concrete surfaces.",
-      features: ["Oil stain removal", "Pressure washing", "Sealing recommendations"],
-      image: "/images/Pressure washing concrete 2 - commercial.jpg",
-      link: "/services/concrete-cleaning"
+      title: "Estate Cleanout",
+      description: "Complete estate cleanout services for homes and properties. We handle everything from furniture to personal belongings with care and respect.",
+      features: ["Complete property cleanout", "Furniture and personal items", "Sensitive handling of belongings", "Donation of usable items", "Full property restoration"],
+      image: "/images/commercial-cleanout.jpg",
+      link: "/services/estate-cleanout"
     },
     {
-      title: "🏠 Roof Cleaning",
-      description: "Safe roof cleaning and moss removal. We use low-pressure techniques to protect your shingles while removing algae and moss.",
-      features: ["Low-pressure cleaning", "Moss and algae removal", "Gutter cleaning included"],
-      image: "/images/pressure washing roof - residential.jpg",
-      link: "/services/roof-cleaning"
+      title: "Construction Debris",
+      description: "Professional construction debris removal for renovation and building projects. We haul away construction materials safely and efficiently.",
+      features: ["Construction material removal", "Renovation debris cleanup", "Building material disposal", "Project site cleanup"],
+      image: "/images/concrete-removal.jpg",
+      link: "/services/construction-debris"
     },
     {
-      title: "🪟 Window Cleaning",
-      description: "Professional window cleaning for crystal-clear results. Interior and exterior cleaning with streak-free finish.",
-      features: ["Interior and exterior", "Streak-free finish", "Screen cleaning included"],
-      image: "/images/pressure washing window.jpg",
-      link: "/services/window-cleaning"
+      title: "Appliance Removal",
+      description: "Safe and efficient removal of old appliances including refrigerators, washers, dryers, and more. Eco-friendly disposal and recycling.",
+      features: ["Refrigerator and freezer removal", "Washer and dryer removal", "Oven and stove removal", "Eco-friendly recycling", "Safe handling and transport"],
+      image: "/images/trash-removal.jpg",
+      link: "/services/appliance-removal"
     },
     {
-      title: "🧽 Gutter Cleaning",
-      description: "Complete gutter cleaning and maintenance. Remove debris, leaves, and blockages to protect your home from water damage.",
-      features: ["Debris removal", "Downspout cleaning", "Gutter inspection"],
-      image: "/images/pressure washing gutter.jpg",
-      link: "/services/gutter-cleaning"
+      title: "Yard Waste Removal",
+      description: "Professional yard waste removal services including branches, leaves, grass clippings, and other organic debris from your property.",
+      features: ["Branches and tree debris", "Leaves and grass clippings", "Organic waste removal", "Composting services", "Seasonal cleanup"],
+      image: "/images/yard-waste.jpg",
+      link: "/services/yard-waste"
     }
   ];
 
@@ -58,7 +58,7 @@ const ServicesSection = memo(() => {
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
           <span className="text-[#1e40af]">OUR</span>{" "}
-          <span className="text-[#FFA500] italic">POWER WASHING</span>{" "}
+          <span className="text-[#dc2626]">JUNK REMOVAL</span>{" "}
           <span className="text-[#1e40af]">SERVICES</span>
         </h2>
         {/* Service Blocks - Equal Width */}

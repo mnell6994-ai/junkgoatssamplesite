@@ -7,107 +7,65 @@ const GoogleReviewsCarousel = memo(() => {
   const reviews = [
     {
       id: 1,
-      text: "Excellent service! They cleaned my deck and siding perfectly. Professional, on-time, and great pricing. Highly recommend!",
-      author: "Sarah Johnson",
-      initials: "SJ",
+      text: "They did a great job hauling out an old shed and cleaning the area. Fast and quality work.",
+      author: "Sarah Mitchell",
+      initials: "SM",
       verified: true
     },
     {
       id: 2,
-      text: "Outstanding work! My house looks brand new. The team was courteous and efficient. Will definitely use again!",
-      author: "Mike Rodriguez",
+      text: "A real person answered the phone and set up a pickup time the following day. I'd left messages with other companies, but no response. Those guys got everything into one load, even though it was pouring rain at the end. All smiles and no complaints about all the wired stuff they had to carry out. Would definitely recommend!",
+      author: "Michael Rodriguez",
       initials: "MR",
       verified: true
     },
     {
       id: 3,
-      text: "Best power washing service in Richmond! They removed years of grime from my driveway. Fair price and excellent results.",
-      author: "Jennifer Chen",
-      initials: "JC",
+      text: "Wow! This business is legit. Great guys, professional, fast. All the stars. You will not be disappointed with their service. Thank you Junk Goats!!!",
+      author: "Jennifer Thompson",
+      initials: "JT",
       verified: true
     },
     {
       id: 4,
-      text: "Professional, reliable, and thorough. They cleaned my entire exterior including gutters. Very satisfied with the results!",
-      author: "David Thompson",
-      initials: "DT",
+      text: "This is a great company to deal with. From the time I called to set up the appointment which was scheduled right away for an estimate until today when they arrived right on time. They were very nice, polite, and very professional. Their estimate was very, very reasonable and it took them no time to load everything in the truck. I definitely plan on using them again and will highly recommend them to others.",
+      author: "C. Cook",
+      initials: "CC",
       verified: true
     },
     {
       id: 5,
-      text: "Amazing transformation! My deck went from dirty to like new. Great communication and they finished on time. 5 stars!",
+      text: "This company is wonderful! Booking was easy & all my questions were answered. The 2 movers were excellent: punctual, efficient, friendly, organized, and helpful. We filled up the whole truck (even with efficient packing), so had to schedule a second pick up that happened in 48 hrs. Pricing was fairly done. It was a worthwhile experience in every way!",
+      author: "David Anderson",
+      initials: "DA",
+      verified: true
+    },
+    {
+      id: 6,
+      text: "Awesome company with a quality Team. Matthew came out to quote which was accurate. He is trying to keep you as a customer with his amazing customer service. He has a Team of Professionals that are nice as they can be. I recommend him for your haul away service. Seek him out today.",
       author: "Lisa Williams",
       initials: "LW",
       verified: true
     },
     {
-      id: 6,
-      text: "Fantastic service! They were prompt, professional, and did an incredible job cleaning my siding. Highly recommend!",
-      author: "Robert Davis",
-      initials: "RD",
-      verified: true
-    },
-    {
       id: 7,
-      text: "Top-notch service! They cleaned my roof and gutters perfectly. The team was respectful of my property and left everything spotless.",
-      author: "Maria Garcia",
-      initials: "MG",
+      text: "They cleaned out some office furniture for us that we no longer needed. They were prompt, responsive, their guys were friendly and quick, and their quote was well below a competitor of theirs. It was a great experience. We will definitely use them again if we need more hauled away!",
+      author: "Robert Chen",
+      initials: "RC",
       verified: true
     },
     {
       id: 8,
-      text: "Incredible results! My concrete driveway looks brand new. They removed oil stains I thought were permanent. Worth every penny!",
-      author: "James Wilson",
-      initials: "JW",
+      text: "We had a great experience using Junk Goats to remove several pieces of old furniture from our home. I was able to quickly and easily schedule next day service. Jay and Will were courteous, professional, and super efficient. We will definitely use their services again if the need arises!",
+      author: "Amanda Garcia",
+      initials: "AG",
       verified: true
     },
     {
       id: 9,
-      text: "Outstanding customer service and quality work. They cleaned my entire house exterior and the results exceeded my expectations.",
-      author: "Amanda Brown",
-      initials: "AB",
-      verified: true
-    },
-    {
-      id: 10,
-      text: "Professional team with excellent attention to detail. They cleaned my deck, siding, and walkways. Highly satisfied customer!",
-      author: "Christopher Lee",
-      initials: "CL",
-      verified: true
-    },
-    {
-      id: 11,
-      text: "Best power washing company in the area! They removed mold and mildew from my siding beautifully. Fair pricing and great results.",
-      author: "Michelle Taylor",
-      initials: "MT",
-      verified: true
-    },
-    {
-      id: 12,
-      text: "Exceptional service! They cleaned my fence and deck to perfection. The team was friendly, professional, and efficient.",
-      author: "Kevin Martinez",
-      initials: "KM",
-      verified: true
-    },
-    {
-      id: 13,
-      text: "Amazing work! They transformed my dirty concrete patio into something that looks brand new. Highly recommend their services!",
-      author: "Rachel Anderson",
-      initials: "RA",
-      verified: true
-    },
-    {
-      id: 14,
-      text: "Outstanding results! They cleaned my house siding and removed years of dirt and grime. Professional team and excellent work!",
-      author: "Thomas Clark",
-      initials: "TC",
-      verified: true
-    },
-    {
-      id: 15,
-      text: "Fantastic experience! They cleaned my deck and it looks absolutely beautiful. Great communication throughout the process.",
-      author: "Stephanie White",
-      initials: "SW",
+      text: "The guys were fantastic they were very professional, kind, thoughtful, on time, reasonable, and very polite. I highly recommend if you have junk to get rid of call these guys. I had a 16+ year mattress plus an old wooden playhouse that I needed to get rid of. These guys were in and out real quick with my old mattress. Great price too!!! Love these guys. Thank you so much",
+      author: "James Wilson",
+      initials: "JW",
       verified: true
     }
   ];

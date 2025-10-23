@@ -4,13 +4,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    service: "",
     message: ""
   });
 
@@ -47,7 +47,6 @@ export default function ContactForm() {
           name: "",
           email: "",
           phone: "",
-          service: "",
           message: ""
         });
       } else {
@@ -70,7 +69,7 @@ export default function ContactForm() {
             We've received your request and will contact you within 24 hours to schedule your free estimate.
           </p>
           <p className="text-sm opacity-90">
-            For immediate assistance, call us at (804) 555-0123
+            For immediate assistance, call us at (804) 494-7999
           </p>
         </CardContent>
       </Card>
@@ -135,31 +134,10 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1e40af] focus:border-transparent"
-              placeholder="(804) 555-0123"
+              placeholder="(804) 494-7999"
             />
           </div>
 
-          <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-              Service Needed
-            </label>
-            <select
-              id="service"
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1e40af] focus:border-transparent"
-            >
-              <option value="">Select a service</option>
-              <option value="house-washing">House Washing</option>
-              <option value="deck-cleaning">Deck & Fence Cleaning</option>
-              <option value="concrete-cleaning">Concrete Cleaning</option>
-              <option value="roof-cleaning">Roof Cleaning</option>
-              <option value="window-cleaning">Window Cleaning</option>
-              <option value="gutter-cleaning">Gutter Cleaning</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
@@ -185,20 +163,31 @@ export default function ContactForm() {
           </Button>
         </form>
 
-        <div className="mt-6 pt-6 border-t border-gray-200">
+        <div className="mt-6 pt-6 border-t border-gray-200 relative">
           <div className="space-y-3">
             <div className="flex items-center gap-3 text-sm text-gray-600">
               <Phone className="w-4 h-4 text-[#dc2626]" />
-              <span>(804) 555-0123</span>
+              <span>(804) 494-7999</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-600">
               <Mail className="w-4 h-4 text-[#dc2626]" />
-              <span>info@richmondpowerwashpro.com</span>
+              <span>info@junkgoatsrichmond.com</span>
             </div>
             <div className="flex items-center gap-3 text-sm text-gray-600">
               <MapPin className="w-4 h-4 text-[#dc2626]" />
               <span>Richmond, VA</span>
             </div>
+          </div>
+          
+          {/* Junk Goats Logo */}
+          <div className="absolute bottom-0 right-0 p-2">
+            <Image
+              src="/images/junk-goats-logo.png"
+              alt="Junk Goats Junk Removal"
+              width={120}
+              height={36}
+              className="opacity-90"
+            />
           </div>
         </div>
       </CardContent>

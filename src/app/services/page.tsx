@@ -30,74 +30,73 @@ export default function ServicesPage() {
   }, []);
   const services = [
     {
-      title: "House Washing",
-      description: "Complete exterior house cleaning including siding, brick, stucco, and vinyl. Safe for all surfaces with professional techniques.",
-      image: "https://images.unsplash.com/photo-1581578731548-c6a0c3f2f2c0?w=600&h=400&fit=crop",
+      title: "Junk Removal",
+      description: "Complete junk removal services for residential and commercial properties. We haul away furniture, appliances, and debris safely and efficiently.",
+      image: "/images/junk-removal-1.jpg",
       features: [
-        "Soft washing for delicate surfaces",
-        "Mold and mildew removal",
-        "Gutter cleaning included",
-        "Window cleaning add-on available",
-        "Eco-friendly cleaning solutions"
-      ],
-      price: "Starting at $200",
-      slug: "house-washing"
-    },
-    {
-      title: "Deck & Fence Cleaning",
-      description: "Restore your deck and fence to like-new condition. We use the right pressure and cleaning solutions for wood surfaces.",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      features: [
-        "Wood-safe cleaning solutions",
-        "Stain preparation included",
-        "Sealing recommendations",
-        "Pressure washing technique",
-        "Mold and mildew removal"
+        "Same-day service available",
+        "Furniture and appliance removal",
+        "Construction debris cleanup",
+        "Yard waste removal",
+        "Eco-friendly disposal methods"
       ],
       price: "Starting at $150",
-      slug: "deck-fence-cleaning"
+      slug: "junk-removal"
     },
     {
-      title: "Concrete Cleaning",
-      description: "Driveway, sidewalk, and patio cleaning. Remove oil stains, dirt, and grime to restore your concrete surfaces.",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop",
+      title: "Furniture Removal",
+      description: "Professional furniture removal services for homes and offices. We safely remove and dispose of old furniture, mattresses, and large items.",
+      image: "/images/mattress-removal.jpg",
       features: [
-        "Oil stain removal",
-        "Pressure washing",
-        "Sealing recommendations",
-        "Crack repair referrals",
-        "Eco-friendly solutions"
+        "Mattress and furniture removal",
+        "Large item hauling",
+        "Safe disassembly when needed",
+        "Eco-friendly disposal",
+        "Same-day pickup available"
       ],
-      price: "Starting at $100",
-      slug: "concrete-cleaning"
+      price: "Starting at $75",
+      slug: "furniture-removal"
     },
     {
-      title: "Roof Cleaning",
-      description: "Safe roof cleaning and moss removal. We use low-pressure techniques to protect your shingles while removing algae and moss.",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop",
+      title: "Estate Cleanout",
+      description: "Complete estate cleanout services for homes and properties. We handle everything from furniture to personal belongings with care and respect.",
+      image: "/images/residential-junk.jpg",
       features: [
-        "Low-pressure cleaning",
-        "Moss and algae removal",
-        "Gutter cleaning included",
-        "Shingle-safe techniques",
-        "Prevents future growth"
+        "Complete property cleanout",
+        "Furniture and personal items",
+        "Sensitive handling of belongings",
+        "Donation of usable items",
+        "Full property restoration"
       ],
       price: "Starting at $300",
-      slug: "roof-cleaning"
+      slug: "estate-cleanout"
     },
     {
-      title: "Window Cleaning",
-      description: "Professional window cleaning for crystal-clear results. Interior and exterior cleaning with streak-free finish.",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop",
+      title: "Yard Waste Removal",
+      description: "Professional yard waste removal services including branches, leaves, grass clippings, and other organic debris from your property.",
+      image: "/images/yard-waste.jpg",
       features: [
-        "Interior and exterior",
-        "Streak-free finish",
-        "Screen cleaning included",
-        "Frame cleaning",
-        "Sill cleaning"
+        "Branches and tree debris",
+        "Leaves and grass clippings",
+        "Organic waste removal",
+        "Composting services",
+        "Seasonal cleanup"
       ],
-      price: "Starting at $120",
-      slug: "window-cleaning"
+      price: "Starting at $100",
+      slug: "yard-waste"
+    },
+    {
+      title: "Construction Debris Removal",
+      description: "Professional construction debris removal for renovation and building projects. We haul away construction materials safely and efficiently.",
+      image: "/images/commercial-cleanout.jpg",
+      features: [
+        "Construction material removal",
+        "Renovation debris cleanup",
+        "Building material disposal",
+        "Project site cleanup"
+      ],
+      price: "Starting at $200",
+      slug: "construction-debris"
     },
     {
       title: "Gutter Cleaning",

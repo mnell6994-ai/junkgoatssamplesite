@@ -2,25 +2,88 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ArrowRight, Star, Clock, Shield, Award, Phone, Mail, MapPin } from "lucide-react";
+import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import TrustBadges from "@/components/trust-badges";
-import GoogleReviewsCarousel from "@/components/google-reviews-carousel";
 import dynamic from "next/dynamic";
 
 // Lazy load components
+const TrustBadges = dynamic(() => import("@/components/trust-badges"), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-32 rounded-lg"></div>
+});
+
+const GoogleReviewsCarousel = dynamic(() => import("@/components/google-reviews-carousel"), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-64 rounded-lg"></div>
+});
+
 const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple"), {
   loading: () => <div className="animate-pulse bg-gray-200 h-96 rounded-lg"></div>
 });
 
 export const metadata = {
-  title: "Power Washing Mechanicsville VA | Professional Pressure Washing Services",
-  description: "Professional power washing services in Mechanicsville, VA. House washing, deck cleaning, concrete cleaning, and more. Licensed, insured, and locally owned. Free estimates!",
-  keywords: "power washing Mechanicsville VA, pressure washing Mechanicsville, house washing Mechanicsville, deck cleaning Mechanicsville, concrete cleaning Mechanicsville, gutter cleaning Mechanicsville"
+  title: "Junk Removal Mechanicsville VA | Professional Junk Removal Services in Mechanicsville Virginia",
+  description: "Professional junk removal services in Mechanicsville, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  keywords: "junk removal Mechanicsville VA, junk removal Mechanicsville Virginia, furniture removal Mechanicsville, estate cleanout Hanover County, construction debris Mechanicsville, appliance removal Mechanicsville Virginia"
 };
 
 export default function MechanicsvillePage() {
+  const services = [
+    {
+      name: "Junk Removal",
+      description: "Complete junk removal service for homes and businesses throughout Mechanicsville",
+      price: "Starting at $150",
+      features: ["Same-day service available", "All items accepted", "Eco-friendly disposal", "Free estimates"]
+    },
+    {
+      name: "Furniture Removal",
+      description: "Professional furniture removal including large items and heavy pieces",
+      price: "Starting at $100",
+      features: ["Large furniture handling", "Safe removal techniques", "Donation options", "Responsible disposal"]
+    },
+    {
+      name: "Estate Cleanout",
+      description: "Complete estate cleanout services for homes and properties",
+      price: "Starting at $300",
+      features: ["Full property cleanout", "Sensitive handling", "Item sorting", "Family consultation"]
+    },
+    {
+      name: "Construction Debris",
+      description: "Construction debris removal for contractors and homeowners",
+      price: "Starting at $200",
+      features: ["Construction materials", "Concrete removal", "Heavy debris handling", "Contractor discounts"]
+    },
+    {
+      name: "Appliance Removal",
+      description: "Safe appliance removal including refrigerators, washers, and more",
+      price: "Starting at $80",
+      features: ["All appliance types", "Safe disconnection", "Responsible disposal", "Same-day service"]
+    },
+    {
+      name: "Yard Waste Removal",
+      description: "Yard waste and debris removal for residential properties",
+      price: "Starting at $120",
+      features: ["Yard debris cleanup", "Branches and logs", "Seasonal cleanup", "Eco-friendly disposal"]
+    }
+  ];
+
+  const neighborhoods = [
+    "Mechanicsville",
+    "Atlee",
+    "Ashland",
+    "Hanover",
+    "Glen Allen",
+    "Short Pump",
+    "Tuckahoe",
+    "Lakeside",
+    "Innsbrook",
+    "West End",
+    "Near West End",
+    "Wyndham",
+    "Three Chopt",
+    "Pemberton",
+    "Twin Hickory"
+  ];
+
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
       <Header />
@@ -28,124 +91,93 @@ export default function MechanicsvillePage() {
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
         <Image
-          src="/images/powerwashing deck.jpg"
-          alt="Professional power washing services in Mechanicsville Virginia"
+          src="/images/junk-removal-richmond-va01.jpg"
+          alt="Junk removal services in Mechanicsville Virginia"
           fill
           className="object-cover"
           priority
           sizes="100vw"
-          quality={85}
+          quality={75}
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
               PROFESSIONAL{" "}
-              <span className="inline-block font-black text-6xl lg:text-8xl text-[#FFA500]" style={{
+              <span className="inline-block font-black text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-[#dc2626]" style={{ 
                 textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
               }}>
-                POWER WASHING
+                JUNK REMOVAL
               </span>
               <br />
               IN MECHANICSVILLE, VA
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold">
-              Transform your Mechanicsville home with our professional power washing services. We serve the entire Mechanicsville area with house washing, deck cleaning, concrete cleaning, and more.
+            <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-semibold">
+                Mechanicsville's most trusted junk removal company. We've been serving Mechanicsville, Atlee, Ashland, Hanover County, and surrounding areas for years with professional, reliable, and affordable junk removal services.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+            <Link href="/contact">
+              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
               Get Free Estimate
             </Button>
-            <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
-              CALL (804) 555-0123
+            </Link>
+              <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
+              CALL (804) 494-7999
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <TrustBadges />
-
-      {/* Google Reviews Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="text-center mb-8">
-            <Image
-              src="/images/google five star rating 2.png"
-              alt="Google 5 Star Reviews"
-              width={200}
-              height={60}
-              className="mx-auto mb-4"
-            />
-            <h2 className="text-4xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
-              WHAT OUR <span className="text-[#FFA500] italic">MECHANICSVILLE</span> CUSTOMERS SAY
-            </h2>
-          </div>
-          <GoogleReviewsCarousel />
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 bg-[#f8f9fa]">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h2 className="text-5xl font-black uppercase tracking-tight">
+      {/* Why Choose Us for Mechanicsville */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
                 <span className="text-[#1e40af]">WHY MECHANICSVILLE</span>{" "}
-                <span className="text-[#FFA500] italic">HOMEOWNERS</span>{" "}
+            <span className="text-[#dc2626]">RESIDENTS</span>{" "}
                 <span className="text-[#1e40af]">CHOOSE US</span>
               </h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#dc2626] rounded-full p-2 flex-shrink-0">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div>
-                    <h3 className="text-xl font-bold text-[#1e40af] mb-2">Licensed & Insured</h3>
-                    <p className="text-gray-600">Fully licensed and insured for your peace of mind in Mechanicsville.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#dc2626] rounded-full p-2 flex-shrink-0">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1e40af] mb-2">Local Expertise</h3>
-                    <p className="text-gray-600">We know Mechanicsville's unique cleaning challenges and weather patterns.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#dc2626] rounded-full p-2 flex-shrink-0">
-                    <Star className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1e40af] mb-2">300+ 5-Star Reviews</h3>
-                    <p className="text-gray-600">Highly rated by Mechanicsville homeowners for quality and reliability.</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="bg-[#dc2626] rounded-full p-2 flex-shrink-0">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1e40af] mb-2">Same-Day Service</h3>
-                    <p className="text-gray-600">Quick response times for urgent cleaning needs in Mechanicsville.</p>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1e40af] mb-6">
+                Local Mechanicsville Junk Removal Experts
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                As a locally owned and operated business, we understand Mechanicsville's diverse neighborhoods and unique needs. 
+                From family homes in Mechanicsville to rural properties in Hanover County, we have the experience and knowledge 
+                to handle any junk removal job safely and efficiently.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                Mechanicsville's location in Hanover County provides a mix of suburban and rural settings. Whether you're 
+                dealing with estate cleanouts in Atlee, furniture removal from Ashland homes, or construction debris 
+                from Hanover County development projects, our Mechanicsville junk removal experts understand the area's unique landscape.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                We serve all Mechanicsville and Hanover County areas including Mechanicsville, Atlee, Ashland, Hanover, and Glen Allen. 
+                Our local knowledge helps us provide faster service and better pricing than companies that don't 
+                understand Mechanicsville's specific zoning and disposal requirements.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Licensed, bonded, and fully insured",
+                  "Years of experience serving Mechanicsville", 
+                  "Free estimates with no hidden fees",
+                  "Same-day service available",
+                  "100% satisfaction guarantee"
+                ].map((benefit) => (
+                  <li key={benefit} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-[#dc2626]" />
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            
-            <div className="relative w-full h-96">
+            <div className="relative w-full h-64 md:h-96">
               <Image
-                src="/images/mechanicsville va.jpeg"
-                alt="Mechanicsville Power Washing"
+                src="/images/mechanicsville-update.jpg" 
+                alt="Mechanicsville junk removal professionals at work"
                 fill
-                className="object-cover rounded-lg shadow-lg"
+                className="object-cover rounded-lg"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
               />
@@ -154,42 +186,73 @@ export default function MechanicsvillePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
-            <span className="text-[#1e40af]">OUR POWER WASHING</span>{" "}
-            <span className="text-[#FFA500] italic">SERVICES</span>{" "}
+      {/* Google Reviews Section */}
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
+                <span className="text-[#1e40af]">WHAT OUR</span>{" "}
+                <span className="text-[#dc2626]">MECHANICSVILLE</span>{" "}
+                <span className="text-[#1e40af]">CUSTOMERS SAY</span>
+              </h2>
+              
+              <div className="mt-8 flex justify-center">
+                <Image 
+                  src="/images/google-five-star-rating.png"
+                  alt="Google 5 Star Rating"
+                  width={200}
+                  height={100}
+                  className="mb-8"
+                />
+              </div>
+              
+              <GoogleReviewsCarousel />
+            </div>
+            <div className="relative z-10">
+              <ContactFormSimple />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services in Mechanicsville */}
+      <section className="py-16 bg-[#f3f4f6]">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
+            <span className="text-[#1e40af]">OUR JUNK REMOVAL</span>{" "}
+            <span className="text-[#dc2626]">SERVICES</span>{" "}
             <span className="text-[#1e40af]">IN MECHANICSVILLE</span>
           </h2>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing house.jpg"
-                  alt="House Washing Mechanicsville"
+                  src="/images/junk-removal-1.jpg"
+                  alt="Junk Removal Mechanicsville"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">House Washing</h3>
-                  <p className="text-gray-600 mb-4">
-                    Complete exterior house cleaning to remove dirt, mold, and mildew from your Mechanicsville home.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Junk Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Complete junk removal service for homes and businesses throughout Mechanicsville. We handle all types of unwanted items safely and efficiently. 
+                    From single item pickups to full house cleanouts, our Mechanicsville team provides professional junk removal services across all areas 
+                    including Mechanicsville, Atlee, Ashland, Hanover County, and surrounding communities.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Siding cleaning
+                      Same-day service available
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Mold removal
+                      All items accepted
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Window cleaning
+                      Eco-friendly disposal
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -202,29 +265,31 @@ export default function MechanicsvillePage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/powerwashing deck.jpg"
-                  alt="Deck Cleaning Mechanicsville"
+                  src="/images/mattress-removal.jpg"
+                  alt="Furniture Removal Mechanicsville"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Deck Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Professional deck cleaning and restoration to bring your outdoor space back to life.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Furniture Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Professional furniture removal including large items and heavy pieces. We handle all furniture types with care and professionalism. 
+                    Mechanicsville's diverse housing includes everything from modern Atlee homes to established Hanover County properties, 
+                    each requiring specialized furniture removal techniques.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Pressure washing
+                      Large furniture handling
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Staining & sealing
+                      Safe removal techniques
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Wood restoration
+                      Donation options available
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -237,29 +302,142 @@ export default function MechanicsvillePage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing driveway .jpg"
-                  alt="Concrete Cleaning Mechanicsville"
+                  src="/images/concrete-removal.jpg"
+                  alt="Construction Debris Removal Mechanicsville"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Concrete Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Driveway, patio, and sidewalk cleaning to restore your concrete surfaces.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Construction Debris</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Construction debris removal for contractors and homeowners. We handle all types of construction materials and heavy debris. 
+                    Mechanicsville's growing construction market means lots of renovation projects. Whether you're a contractor working on 
+                    Hanover County office buildings or a homeowner renovating a Mechanicsville home, we can handle your construction debris.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Oil stain removal
+                      Construction materials
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Pressure washing
+                      Concrete removal
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Sealing options
+                      Heavy debris handling
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
+              <CardContent className="p-0">
+                <Image
+                  src="/images/piano-removal.jpg"
+                  alt="Appliance Removal Mechanicsville"
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Appliance Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Safe appliance removal including refrigerators, washers, dryers, and more. We handle all appliance types with care. 
+                    Mechanicsville's diverse housing stock means appliances of all sizes and ages. From modern condos in Atlee to 
+                    established homes in Hanover County, we safely remove and properly dispose of all appliance types.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      All appliance types
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Safe disconnection
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Responsible disposal
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
+              <CardContent className="p-0">
+                <Image
+                  src="/images/residential-junk.jpg"
+                  alt="Estate Cleanout Mechanicsville"
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Estate Cleanout</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Complete estate cleanout services for homes and properties. We handle sensitive situations with care and professionalism. 
+                    Mechanicsville's established neighborhoods are filled with homes that have been in families for generations. When the time comes 
+                    for estate cleanouts, our compassionate team helps families through this difficult process while preserving valuable items.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Full property cleanout
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Sensitive handling
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Family consultation
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
+                    FREE QUOTE
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
+              <CardContent className="p-0">
+                <Image
+                  src="/images/yard-waste.jpg"
+                  alt="Yard Waste Removal Mechanicsville"
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Yard Waste Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Yard waste and debris removal for residential properties. We handle all types of yard debris and seasonal cleanup. 
+                    Mechanicsville's mature trees and well-landscaped properties create beautiful neighborhoods, but they also generate lots of yard waste. 
+                    From fallen branches in Hanover County to seasonal cleanup in Atlee, we help keep Mechanicsville's neighborhoods clean and beautiful.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Yard debris cleanup
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Branches and logs
+                    </li>
+                    <li className="flex items-center gap-2 text-sm text-gray-700">
+                      <Check className="w-4 h-4 text-green-500" />
+                      Seasonal cleanup
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -272,94 +450,101 @@ export default function MechanicsvillePage() {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 bg-[#f8f9fa]">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+      {/* Mechanicsville Areas */}
+      <section className="py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">WE SERVE ALL</span>{" "}
-            <span className="text-[#FFA500] italic">MECHANICSVILLE</span>{" "}
-            <span className="text-[#1e40af]">NEIGHBORHOODS</span>
+            <span className="text-[#dc2626]">MECHANICSVILLE</span>{" "}
+            <span className="text-[#1e40af]">AREAS</span>
           </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Atlee</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {neighborhoods.map((neighborhood, index) => (
+              <Card key={index} className="bg-white text-center p-4 hover:shadow-md transition-shadow">
+                <CardContent className="p-2">
+                  <h3 className="font-semibold text-[#1e40af]">{neighborhood}</h3>
+                </CardContent>
+              </Card>
+            ))}
             </div>
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Cold Harbor</p>
-            </div>
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Studley</p>
-            </div>
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Pole Green</p>
-            </div>
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Chickahominy</p>
-            </div>
-            <div className="text-center p-4 bg-white rounded-lg shadow-sm">
-              <MapPin className="w-6 h-6 text-[#dc2626] mx-auto mb-2" />
-              <p className="text-sm font-semibold text-[#dc2626]">Hanover</p>
-            </div>
+          <div className="mt-8 p-4 md:p-6 bg-white rounded-lg shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold text-[#1e40af] mb-4 text-center">Mechanicsville Areas We Serve</h3>
+            <p className="text-sm md:text-base text-gray-600 mb-4 text-center">
+              Junk Goats proudly serves all Mechanicsville and Hanover County areas with our professional junk removal services. 
+              Our local Mechanicsville team understands the unique characteristics of each area and provides tailored 
+              services to meet the specific needs of residents and businesses throughout the area.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>Mechanicsville:</strong> Known for its family-friendly neighborhoods and excellent schools, we provide 
+              comprehensive junk removal services for homes and businesses in this growing community.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>Atlee:</strong> This upscale residential area often needs premium junk removal services. 
+              We help residents maintain clean properties and remove old fixtures and equipment with care.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>Ashland:</strong> Mechanicsville's established neighborhood requires careful handling of older properties. 
+              Our team respects the architectural integrity while providing efficient junk removal services.
+            </p>
+            <p className="text-center mt-6 text-sm md:text-base text-gray-600">
+              Don't see your area? We serve all of Mechanicsville, Hanover County, and surrounding areas. 
+              <Link href="#contact" className="text-[#1e40af] font-semibold ml-1">Contact us to confirm service in your area →</Link>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto max-w-6xl px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+      <section id="contact" className="py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">READY TO</span>{" "}
-            <span className="text-[#FFA500] italic">TRANSFORM</span>{" "}
-            <span className="text-[#1e40af]">YOUR MECHANICSVILLE HOME?</span>
+            <span className="text-[#dc2626]">CLEAN OUT</span>{" "}
+            <span className="text-[#1e40af]">YOUR MECHANICSVILLE PROPERTY?</span>
           </h2>
-          
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
             <div>
               <ContactFormSimple />
             </div>
             
-            <div className="space-y-8">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-[#1e40af] mb-4">Why Choose Us for Mechanicsville Power Washing?</h3>
+              <div className="space-y-6">
+                <Card className="bg-white">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-bold text-[#1e40af] mb-4">Why Choose Us?</h4>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Local Mechanicsville business with community focus</span>
+                      {[
+                        "Licensed, bonded, and fully insured",
+                        "Years of experience serving Mechanicsville",
+                        "Professional-grade equipment",
+                        "Eco-friendly disposal methods",
+                        "100% satisfaction guarantee"
+                      ].map((item) => (
+                        <li key={item} className="flex items-center gap-3">
+                          <Check className="w-5 h-5 text-[#dc2626]" />
+                          <span className="text-gray-700">{item}</span>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Professional equipment and eco-friendly solutions</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Free estimates with no hidden fees</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">Same-day service available</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span className="text-gray-700">100% satisfaction guarantee</span>
-                  </li>
+                      ))}
                 </ul>
-              </div>
-              
-              <div className="bg-gradient-to-r from-[#1e40af] to-[#dc2626] text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">Get Your Free Mechanicsville Estimate</h3>
-                <p className="text-lg mb-6">
-                  Ready to see the difference professional power washing can make to your Mechanicsville home? Contact us today for a free, no-obligation estimate.
-                </p>
-                <div className="flex items-center gap-3 text-lg font-semibold">
-                  <Phone className="w-6 h-6" />
-                  <span>(804) 555-0123</span>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-white">
+                  <CardContent className="p-6">
+                    <h4 className="text-xl font-bold text-[#1e40af] mb-4">Mechanicsville Service Areas</h4>
+                    <p className="text-gray-600 mb-3">
+                      We proudly provide junk removal services throughout Mechanicsville, Hanover County, and surrounding areas including:
+                    </p>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      {["Mechanicsville", "Atlee", "Ashland", "Hanover", "Glen Allen", "Short Pump", "Tuckahoe", "Lakeside"].map((area) => (
+                        <div key={area} className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-[#dc2626]" />
+                          <span>{area}</span>
+                        </div>
+                      ))}
                 </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>

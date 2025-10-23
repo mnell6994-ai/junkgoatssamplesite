@@ -15,23 +15,23 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <h4 className="text-[#FFA500] text-2xl font-black mb-6 uppercase tracking-tight">Richmond Power Washing Pro</h4>
+            <h4 className="text-[#FFA500] text-2xl font-black mb-6 uppercase tracking-tight">Junk Goats Junk Removal</h4>
             <p className="text-lg text-gray-100 mb-4">
-              Professional power washing services in Richmond, VA. Licensed, insured, and locally owned.
+              Professional junk removal services in Richmond, VA. Licensed, insured, and locally owned.
             </p>
             <div className="flex items-center gap-3 text-lg font-bold text-white">
               <Phone className="w-6 h-6 text-[#FFA500]" />
-              <span>(804) 555-0123</span>
+              <span>(804) 494-7999</span>
             </div>
           </div>
           <div>
             <h4 className="text-[#FFA500] text-xl font-black mb-6 uppercase tracking-tight">Services</h4>
             <ul className="space-y-3 text-lg">
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">House Washing</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Deck Cleaning</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Concrete Cleaning</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Roof Cleaning</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Gutter Cleaning</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Junk Removal</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Furniture Removal</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Yard Waste Removal</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Construction Debris</Link></li>
+              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Estate Cleanout</Link></li>
             </ul>
           </div>
           <div>
@@ -41,6 +41,16 @@ export default function Footer() {
               <li><Link href="/henrico" className="hover:text-[#FFA500] transition-colors font-semibold">Henrico, VA</Link></li>
               <li><Link href="/chesterfield" className="hover:text-[#FFA500] transition-colors font-semibold">Chesterfield, VA</Link></li>
               <li><Link href="/midlothian" className="hover:text-[#FFA500] transition-colors font-semibold">Midlothian, VA</Link></li>
+              <li><Link href="/mechanicsville" className="hover:text-[#FFA500] transition-colors font-semibold">Mechanicsville, VA</Link></li>
+              <li><Link href="/amelia" className="hover:text-[#FFA500] transition-colors font-semibold">Amelia, VA</Link></li>
+              <li><Link href="/ashland" className="hover:text-[#FFA500] transition-colors font-semibold">Ashland, VA</Link></li>
+              <li><Link href="/chester" className="hover:text-[#FFA500] transition-colors font-semibold">Chester, VA</Link></li>
+              <li><Link href="/goochland" className="hover:text-[#FFA500] transition-colors font-semibold">Goochland, VA</Link></li>
+              <li><Link href="/hanover" className="hover:text-[#FFA500] transition-colors font-semibold">Hanover, VA</Link></li>
+              <li><Link href="/hopewell" className="hover:text-[#FFA500] transition-colors font-semibold">Hopewell, VA</Link></li>
+              <li><Link href="/petersburg" className="hover:text-[#FFA500] transition-colors font-semibold">Petersburg, VA</Link></li>
+              <li><Link href="/powhatan" className="hover:text-[#FFA500] transition-colors font-semibold">Powhatan, VA</Link></li>
+              <li><Link href="/sandston" className="hover:text-[#FFA500] transition-colors font-semibold">Sandston, VA</Link></li>
             </ul>
           </div>
           <div>
@@ -48,11 +58,11 @@ export default function Footer() {
             <ul className="space-y-3 text-lg">
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-[#FFA500]" />
-                <span>(804) 555-0123</span>
+                <span>(804) 494-7999</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-[#FFA500]" />
-                <span>info@richmondpowerwashpro.com</span>
+                <span>info@junkgoatsrichmond.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-[#FFA500]" />
@@ -64,7 +74,7 @@ export default function Footer() {
         
         <div className="border-t border-white/20 pt-8 text-center">
           <p className="text-lg text-gray-200 mb-4">
-            &copy; 2025 Richmond Power Washing Pro. All rights reserved.
+            &copy; 2025 Junk Goats Junk Removal. All rights reserved.
           </p>
           <div className="flex justify-center gap-6 text-lg">
             <Link href="/sitemap" className="hover:text-[#FFA500] transition-colors font-semibold">Sitemap</Link>

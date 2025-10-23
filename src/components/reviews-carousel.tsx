@@ -13,35 +13,35 @@ const ReviewsCarousel = memo(() => {
       id: 1,
       name: "Sarah M.",
       rating: 5,
-      text: "Outstanding service! They cleaned our entire house exterior and deck. The team was professional, punctual, and the results exceeded our expectations. Highly recommend!",
+      text: "Outstanding service! They removed all the old furniture and debris from our basement cleanout. The team was professional, punctual, and the results exceeded our expectations. Highly recommend!",
       location: "Richmond, VA"
     },
     {
       id: 2,
       name: "James T.",
       rating: 5,
-      text: "I've used Richmond Power Washing Pro three times now. They always do excellent work and their pricing is very fair. The deck looks brand new after their cleaning.",
+      text: "I've used Junk Goats Junk Removal three times now. They always do excellent work and their pricing is very fair. They hauled away our old appliances and construction debris quickly.",
       location: "Henrico, VA"
     },
     {
       id: 3,
       name: "Emily & David",
       rating: 5,
-      text: "Fast, reliable, and thorough. They cleaned our driveway and removed oil stains I thought were permanent. Will definitely use them again!",
+      text: "Fast, friendly, and thorough. They cleaned out our entire garage and removed items I thought were impossible to move. Will definitely use them again!",
       location: "Chesterfield, VA"
     },
     {
       id: 4,
       name: "Michael R.",
       rating: 5,
-      text: "Professional team that showed up on time and did amazing work. Our house looks like it was just painted after their power washing service.",
+      text: "Professional team that showed up on time and did amazing work. They removed our old shed and cleaned up the yard perfectly. Great service!",
       location: "Midlothian, VA"
     },
     {
       id: 5,
       name: "Lisa K.",
       rating: 5,
-      text: "Excellent customer service from start to finish. They provided a detailed estimate and delivered exactly what they promised. Very satisfied!",
+      text: "Excellent customer service from start to finish. They provided a detailed estimate and delivered exactly what they promised. Very satisfied with the junk removal service!",
       location: "Richmond, VA"
     }
   ];

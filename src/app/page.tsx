@@ -4,11 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, ChevronDown, MapPin, Star, Phone, Mail, Clock } from "lucide-react";
+import { Check, ChevronDown, MapPin, Star, Phone, Mail, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef, useCallback, memo } from "react";
 import dynamic from "next/dynamic";
 import GoogleReviewsCarousel from "@/components/google-reviews-carousel";
 import Footer from "@/components/footer";
+import AnimatedTruck from "@/components/animated-truck";
+import Header from "@/components/header";
 
 // Lazy load heavy components
 const ContactForm = dynamic(() => import("@/components/contact-form"), {
@@ -32,213 +34,99 @@ const ReviewsCarousel = dynamic(() => import("@/components/reviews-carousel"), {
 });
 
 export default function Home() {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
-  const locationsDropdownRef = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
-        setIsServicesOpen(false);
-      }
-      if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(event.target as Node)) {
-        setIsLocationsOpen(false);
-      }
-  }, []);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside, { passive: true });
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-  }, [handleClickOutside]);
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Video testimonials data - actual YouTube video IDs
+  const testimonialVideos = [
+    {
+      videoId: "azKUYgqNH_U",
+      title: "Customer Testimonial 1",
+      description: "Watch this customer share their experience with Junk Goats."
+    },
+    {
+      videoId: "C20ARVroJ_I",
+      title: "Customer Testimonial 2", 
+      description: "See how we helped this customer with their junk removal needs."
+    },
+    {
+      videoId: "ocSeTFk_5oo",
+      title: "Customer Testimonial 3",
+      description: "Another satisfied customer shares their story."
+    },
+    {
+      videoId: "iJgwy2gzibM",
+      title: "Customer Testimonial 4",
+      description: "Professional service that exceeded expectations."
+    },
+    {
+      videoId: "RRuA7gNCl30",
+      title: "Customer Testimonial 5",
+      description: "Fast, reliable, and friendly junk removal service."
+    },
+    {
+      videoId: "-hAcXnSOrlg",
+      title: "Customer Testimonial 6",
+      description: "Great experience from start to finish."
+    },
+    {
+      videoId: "NUnGu_5xJ-M",
+      title: "Customer Testimonial 7",
+      description: "Excellent service and great results."
+    },
+    {
+      videoId: "_SOAfqtKR1k",
+      title: "Customer Testimonial 8",
+      description: "Professional team and outstanding work."
+    },
+    {
+      videoId: "DyNhBUG94l8",
+      title: "Customer Testimonial 9",
+      description: "Highly recommend for all junk removal needs."
+    },
+    {
+      videoId: "uVdpbJcttmw",
+      title: "Customer Testimonial 10",
+      description: "Amazing service from start to finish."
+    }
+  ];
+
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
-      {/* Header */}
-      <header className="bg-white sticky top-0 z-50">
-        <div className="w-full">
-          <div className="flex justify-between items-center w-full pl-4 pr-4">
-            <Link href="/" className="flex items-center">
-              <Image 
-                src="/images/Logo_3-removebg-preview.png" 
-                alt="Richmond Power Washing Pro" 
-                width={800}
-                height={192}
-                className="h-16 w-auto"
-                priority
-                quality={90}
-              />
-            </Link>
-            <nav className="hidden md:flex gap-8">
-              <div className="relative" ref={servicesDropdownRef}>
-                <button
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className="text-[#1e40af] font-black uppercase tracking-wide hover:text-[#dc2626] transition-colors flex items-center gap-1"
-                >
-                  SERVICES
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    <Link 
-                      href="/services/house-washing" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🏠 House Washing
-                    </Link>
-                    <Link 
-                      href="/services/deck-fence-cleaning" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🪵 Deck & Fence Cleaning
-                    </Link>
-                    <Link 
-                      href="/services/concrete-cleaning" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🏗️ Concrete Cleaning
-                    </Link>
-                    <Link 
-                      href="/services/roof-cleaning" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🏠 Roof Cleaning
-                    </Link>
-                    <Link 
-                      href="/services/window-cleaning" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🪟 Window Cleaning
-                    </Link>
-                    <Link 
-                      href="/services/gutter-cleaning" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      🧽 Gutter Cleaning
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <div className="relative" ref={locationsDropdownRef}>
-                <button
-                  onClick={() => setIsLocationsOpen(!isLocationsOpen)}
-                  className="text-[#1e40af] font-black uppercase tracking-wide hover:text-[#dc2626] transition-colors flex items-center gap-1"
-                >
-                  SERVICE AREAS
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isLocationsOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isLocationsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                    <Link 
-                      href="/richmond" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsLocationsOpen(false)}
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        Richmond, VA
-                      </div>
-                    </Link>
-                    <Link 
-                      href="/henrico" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsLocationsOpen(false)}
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        Henrico, VA
-                      </div>
-                    </Link>
-                    <Link 
-                      href="/chesterfield" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsLocationsOpen(false)}
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        Chesterfield, VA
-                      </div>
-                    </Link>
-                    <Link 
-                      href="/midlothian" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsLocationsOpen(false)}
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        Midlothian, VA
-                      </div>
-                    </Link>
-                    <Link 
-                      href="/mechanicsville" 
-                      className="block px-4 py-2 text-[#374151] hover:bg-[#f3f4f6] hover:text-[#1e40af] transition-colors"
-                      onClick={() => setIsLocationsOpen(false)}
-                    >
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        Mechanicsville, VA
-                      </div>
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <Link href="/faq" className="text-[#1e40af] font-black uppercase tracking-wide hover:text-[#dc2626] transition-colors">
-                FAQ
-              </Link>
-              <Link href="/contact" className="text-[#1e40af] font-black uppercase tracking-wide hover:text-[#dc2626] transition-colors">
-                CONTACT
-              </Link>
-            </nav>
-            <div className="flex items-center gap-4">
-              <a href="tel:+18045550123" className="flex items-center gap-2 text-lg text-[#1e40af] font-black uppercase tracking-wide italic hover:text-[#dc2626] transition-colors">
-                <div className="bg-[#dc2626] text-white p-2 rounded-full hover:bg-[#b91c1c] transition-colors">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <span>(804) 555-0123</span>
-              </a>
-              <Link href="/contact">
-                <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
-                  FREE QUOTE
-            </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
         <Image
-          src="/images/powerwashing deck.jpg"
-          alt="Power washing deck"
+          src="/images/hero-image-2.jpg"
+          alt="Professional junk removal services in Richmond VA"
           fill
           className="object-cover"
           priority
           sizes="100vw"
           quality={75}
         />
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto max-w-6xl relative z-10 flex flex-col items-center justify-center min-h-screen text-center">
+          <div>
             <h1 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
-              PROFESSIONAL{" "}
-              <span className="inline-block font-black text-6xl lg:text-8xl text-[#FFA500]" style={{ 
-                textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
-              }}>
-                POWER WASHING
-              </span>
-              <br />
-              IN RICHMOND, VA
+              <span className="block">PROFESSIONAL JUNK REMOVAL</span>
+              <span className="block">IN RICHMOND, VA</span>
           </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold">
-            Transform your property with our expert pressure washing services. House washing, deck cleaning, concrete cleaning, and more. Licensed, insured, and locally owned.
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold text-white">
+            Clear your space with our expert junk removal services. Furniture removal, estate cleanouts, yard waste removal, and more. Licensed, insured, and locally owned.
           </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -248,47 +136,99 @@ export default function Home() {
             </Button>
             </Link>
             <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
-              CALL (804) 555-0123
+              CALL (804) 494-7999
           </Button>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+              {/* Animated Truck Section */}
+              <section className="relative">
+                <AnimatedTruck />
+              </section>
+
+
+      {/* 3 Steps Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-[#1e40af] mb-4 uppercase tracking-tight">
+              JUNK REMOVAL IN 3 STEPS
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                1
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+                STEP 1
+              </h3>
+              <p className="text-lg text-gray-700">
+                Schedule your service online or over the phone
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                2
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+                STEP 2
+              </h3>
+              <p className="text-lg text-gray-700">
+                Receive and Approve your no obligation Free Quote
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-[#1e40af] text-white text-4xl font-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                3
+              </div>
+              <h3 className="text-2xl font-bold text-[#1e40af] mb-4 uppercase tracking-tight">
+                STEP 3
+              </h3>
+              <p className="text-lg text-gray-700">
+                Sit back and relax while the Junk Goats load and haul away your unwanted items
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/contact">
+              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+                Get Started Today
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        {/* Water Splash Background */}
-        <div 
-          className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/spray of water.jpg')",
-            backgroundSize: "100%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat"
-          }}
-        ></div>
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl lg:text-6xl font-black text-center text-[#1e40af] mb-12 uppercase tracking-tight relative z-10 whitespace-nowrap">
-            WHY CHOOSE RICHMOND POWER WASHING PRO?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
+            <span className="text-[#1e40af]">WHY CHOOSE</span>{" "}
+            <span className="text-[#dc2626]">JUNK GOATS</span>{" "}
+            <span className="text-[#1e40af]">JUNK REMOVAL?</span>
           </h2>
-          <div className="grid lg:grid-cols-2 gap-12 items-start relative z-10">
-            <div className="relative z-20 bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="bg-white rounded-lg p-6 shadow-lg">
               <h3 className="text-3xl font-bold text-[#1e40af] mb-6">
-                Richmond's Most Trusted Power Washing Company
+                        Why Choose Junk Goats?
               </h3>
               <p className="text-lg text-gray-700 mb-6">
-                With over 10 years of experience serving the Richmond metro area, we've built our reputation on quality work, 
-                fair pricing, and exceptional customer service. We use professional-grade equipment and eco-friendly cleaning solutions.
+                        Junk Goats does everything from single item pick ups to entire house clean outs. Whatever size junk removal job you have, the Junk Goats can help. Junk Goats is covered end to end with the proper insurance in order to protect our clients and ourselves in the event anything goes wrong. This allows total peace of mind for our clients when hiring Junk Goats.
               </p>
               <ul className="space-y-3">
                 {[
                   "Licensed, bonded, and fully insured",
                   "Professional-grade equipment and eco-friendly solutions", 
-                  "Free estimates with no hidden fees",
+                  "Up front, free no-obligation quotes",
                   "Same-day service available",
                   "100% satisfaction guarantee",
-                  "300+ 5 star reviews"
+                  "400+ 5 star reviews"
                 ].map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-[#dc2626]" />
@@ -299,7 +239,7 @@ export default function Home() {
               
               <div className="mt-8 flex justify-center">
                 <Image 
-                  src="/images/google five star rating 2.png"
+                  src="/images/google-five-star-rating.png"
                   alt="Google Five Star Rating"
                   width={200}
                   height={100}
@@ -321,36 +261,36 @@ export default function Home() {
       {/* Service Areas Section */}
       <section id="locations" className="py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">WE SERVE ALL OF</span>{" "}
-            <span className="text-[#FFA500] italic">RICHMOND</span>{" "}
+            <span className="text-[#dc2626]">RICHMOND</span>{" "}
             <span className="text-[#1e40af]">METRO AREA</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 name: "Richmond",
-                image: "/images/richmond va image.jpeg",
-                description: "Our headquarters and primary service area. Fast response times and same-day service available.",
-                alt: "Power washing services in Richmond Virginia"
+                image: "/images/richmond-va-update.jpg",
+                description: "Professional junk removal services throughout Richmond and surrounding areas.",
+                alt: "Junk removal services in Richmond Virginia"
               },
               {
                 name: "Henrico County", 
-                image: "/images/henrico county image.jpeg",
+                image: "/images/henrico-county-update.jpg",
                 description: "Serving all of Henrico County including Glen Allen, Short Pump, and Tuckahoe areas.",
-                alt: "Power washing services in Henrico County Virginia"
+                alt: "Junk removal services in Henrico County Virginia"
               },
               {
                 name: "Chesterfield",
-                image: "/images/chesterfield image.jpeg", 
-                description: "Professional power washing services throughout Chesterfield County and Midlothian.",
-                alt: "Power washing in Chesterfield County Virginia"
+                image: "/images/chesterfield-image.jpg", 
+                description: "Professional junk removal services throughout Chesterfield County and Midlothian.",
+                alt: "Junk removal in Chesterfield County Virginia"
               },
               {
                 name: "Mechanicsville",
-                image: "/images/mechanicsville va.jpeg",
-                description: "Serving Mechanicsville and surrounding Hanover County areas with expert power washing.",
-                alt: "Power washing services in Mechanicsville Virginia"
+                image: "/images/mechanicsville-update.jpg",
+                description: "Serving Mechanicsville and surrounding Hanover County areas with expert junk removal.",
+                alt: "Junk removal services in Mechanicsville Virginia"
               }
             ].map((location) => (
               <article key={location.name} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -374,66 +314,147 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
-            <span className="text-[#1e40af]">HOW</span>{" "}
-            <span className="text-[#FFA500] italic">IT</span>{" "}
-            <span className="text-[#1e40af]">WORKS</span>
+
+
+      {/* Customer Testimonials Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tight">
+              <span className="text-[#dc2626]">Junk Goats</span> <span className="text-[#1e40af]">Customer Testimonials</span>
           </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-                step: "1",
-                icon: <Phone className="w-16 h-16 text-[#FFA500]" />,
-                title: "Get Your Free Quote",
-                description: "Call us or fill out our online form for a completely free, no-obligation estimate. We'll assess your property and provide transparent pricing."
-              },
-              {
-                step: "2", 
-                icon: <Clock className="w-16 h-16 text-[#FFA500]" />,
-                title: "Schedule Your Service",
-                description: "Choose a convenient time that works for you. We offer flexible scheduling including same-day service for urgent needs."
-              },
-              {
-                step: "3",
-                icon: <Check className="w-16 h-16 text-[#FFA500]" />,
-                title: "We Take Care of Everything",
-                description: "Sit back and relax while our professional team transforms your property. We handle all the work with eco-friendly solutions and professional equipment."
-              }
-            ].map((item) => (
-              <div key={item.step} className="text-center bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="flex justify-center mb-6">
-                  {item.icon}
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what our amazing customers have to say about our junk removal services.
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="overflow-hidden">
+              <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentVideoIndex * (100 / (isMobile ? 1 : 3))}%)` }}>
+                {testimonialVideos.map((video, index) => (
+                  <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-2">
+                    <div className="aspect-video bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${video.videoId}`}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="rounded-lg"
+                      ></iframe>
+                    </div>
                 </div>
-                <div className="text-6xl font-black text-[#dc2626] mb-4">{item.step}</div>
-                <h3 className="text-2xl font-bold text-[#1e40af] mb-4">{item.title}</h3>
-                <p className="text-gray-700 text-lg leading-relaxed">{item.description}</p>
+                ))}
               </div>
+            </div>
+            
+            {/* Navigation arrows */}
+            <button
+              onClick={() => setCurrentVideoIndex((prev) => (prev === 0 ? Math.ceil(testimonialVideos.length / (isMobile ? 1 : 3)) - 1 : prev - 1))}
+              className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-[#1e40af] text-white p-2 md:p-3 rounded-full hover:bg-[#1e3a8a] transition-colors shadow-lg z-10"
+            >
+              <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={() => setCurrentVideoIndex((prev) => (prev === Math.ceil(testimonialVideos.length / (isMobile ? 1 : 3)) - 1 ? 0 : prev + 1))}
+              className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-[#1e40af] text-white p-2 md:p-3 rounded-full hover:bg-[#1e3a8a] transition-colors shadow-lg z-10"
+            >
+              <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
+            </button>
+          </div>
+
+          {/* Video indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: Math.ceil(testimonialVideos.length / (isMobile ? 1 : 3)) }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentVideoIndex(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  index === currentVideoIndex ? 'bg-[#1e40af]' : 'bg-gray-300'
+                }`}
+              />
             ))}
           </div>
-          <div className="text-center mt-12">
+
+          <div className="text-center mt-8">
             <Link href="/contact">
-              <Button className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
-                GET YOUR FREE QUOTE TODAY
+              <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+                Get Your Free Estimate
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-black text-[#dc2626] mb-4 uppercase tracking-tight">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional, friendly, and experienced junk removal experts serving Richmond and surrounding areas.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <Image
+                  src="/images/homepage-hero-image.jpeg"
+                  alt="Junk Goats Team"
+                  width={400}
+                  height={300}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Our Professional Team</h3>
+                  <p className="text-gray-600">
+                    Junk Goats Junk Removal provides both residential and commercial junk removal. We understand that our junk removal clients desire a simple, stress-free, and affordable junk removal experience. Our professional and friendly junk removal specialists are trained to provide our clients with exceptional customer service and value.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardContent className="p-0">
+                <Image
+                  src="/images/smiling-team-shot.jpg"
+                  alt="Friendly Team Member"
+                  width={400}
+                  height={300}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Friendly Service</h3>
+                  <p className="text-gray-600">
+                    Our team members are uniformed, friendly, and courteous professionals who ensure every interaction is pleasant and stress-free. We understand that junk removal can be overwhelming, which is why our team goes above and beyond to provide exceptional customer service with a smile.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-[#f3f4f6]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-[#1e40af] mb-12">
-            Ready to <span className="text-[#FFA500] italic">TRANSFORM</span> Your Property?
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center text-[#dc2626] mb-12 uppercase tracking-tight">
+            Junk Got Your Goat?
           </h2>
+          <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            Ready to see the difference professional junk removal can make? Contact us today for a free, no-obligation estimate.
+          </p>
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
             <div>
-                <ContactForm />
+                <ContactFormSimple />
               </div>
               
               {/* Service Areas */}
@@ -444,8 +465,8 @@ export default function Home() {
                     <p className="text-gray-600 mb-6 text-center text-lg">
                       We proudly serve all of Richmond metro area including:
                     </p>
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      {["Richmond", "Henrico", "Chesterfield", "Midlothian", "Glen Allen", "Short Pump", "Mechanicsville", "Bon Air"].map((area) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm">
+                      {["Richmond", "Henrico", "Chesterfield", "Midlothian", "Mechanicsville", "Amelia", "Ashland", "Chester", "Goochland", "Hanover", "Hopewell", "Petersburg", "Powhatan", "Sandston"].map((area) => (
                         <div key={area} className="flex items-center gap-2 justify-center">
                           <MapPin className="w-4 h-4 text-[#dc2626]" />
                           <span className="font-semibold">{area}</span>
@@ -458,8 +479,8 @@ export default function Home() {
                 <Card className="bg-white overflow-hidden">
                   <CardContent className="p-0">
                     <Image
-                      src="/images/pressure washing driveway .jpg"
-                      alt="Pressure Washing Driveway"
+                      src="/images/commercial-cleanout.jpg"
+                      alt="Commercial Cleanout Services"
                       width={400}
                       height={300}
                       className="w-full h-64 object-cover"

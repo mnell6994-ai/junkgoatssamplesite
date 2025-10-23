@@ -8,13 +8,13 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Check, Phone, Mail, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    service: "",
     propertySize: "",
     message: ""
   });
@@ -45,7 +45,6 @@ export default function ContactForm() {
           name: "",
           email: "",
           phone: "",
-          service: "",
           propertySize: "",
           message: ""
         });
@@ -66,12 +65,6 @@ export default function ContactForm() {
     });
   };
 
-  const handleSelectChange = (value: string) => {
-    setFormData({
-      ...formData,
-      service: value
-    });
-  };
 
   if (isSubmitted) {
     return (
@@ -96,7 +89,7 @@ export default function ContactForm() {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl text-[#1e40af]">Get Your Free Estimate</CardTitle>
           <CardDescription className="text-lg">
-            Ready to see the difference professional power washing can make? Contact us today for a free, no-obligation estimate.
+            Ready to see the difference professional junk removal can make? Contact us today for a free, no-obligation estimate.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">
@@ -152,28 +145,8 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   className="mt-1"
-                  placeholder="(804) 555-0123"
+                  placeholder="(804) 494-7999"
                 />
-              </div>
-              <div>
-                <Label htmlFor="service" className="text-sm font-medium text-gray-700">
-                  Service Needed *
-                </Label>
-                <Select onValueChange={handleSelectChange} required>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue placeholder="Select a service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="house-washing">House Washing</SelectItem>
-                    <SelectItem value="deck-fence-cleaning">Deck & Fence Cleaning</SelectItem>
-                    <SelectItem value="concrete-cleaning">Concrete Cleaning</SelectItem>
-                    <SelectItem value="roof-cleaning">Roof Cleaning</SelectItem>
-                    <SelectItem value="window-cleaning">Window Cleaning</SelectItem>
-                    <SelectItem value="gutter-cleaning">Gutter Cleaning</SelectItem>
-                    <SelectItem value="multiple-services">Multiple Services</SelectItem>
-                    <SelectItem value="not-sure">Not Sure</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
             </div>
 
@@ -218,21 +191,32 @@ export default function ContactForm() {
               {isSubmitting ? "SUBMITTING..." : "Get My Free Estimate"}
             </Button>
 
-            <div className="text-center text-sm text-gray-600">
+            <div className="text-center text-sm text-gray-600 relative">
               <p className="mb-2">Or call us directly:</p>
               <div className="flex items-center justify-center gap-4">
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-[#dc2626]" />
-                  <span className="font-semibold">(804) 555-0123</span>
+                  <span className="font-semibold">(804) 494-7999</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#dc2626]" />
-                  <span className="font-semibold">info@richmondpowerwashpro.com</span>
+                  <span className="font-semibold">info@junkgoatsrichmond.com</span>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-2 mt-2">
                 <Clock className="w-4 h-4 text-[#dc2626]" />
                 <span>Mon-Sat: 7AM-7PM</span>
+              </div>
+              
+              {/* Junk Goats Logo */}
+              <div className="absolute bottom-0 right-0 p-2">
+                <Image
+                  src="/images/junk-goats-logo.png"
+                  alt="Junk Goats Junk Removal"
+                  width={120}
+                  height={36}
+                  className="opacity-90"
+                />
               </div>
             </div>
           </form>

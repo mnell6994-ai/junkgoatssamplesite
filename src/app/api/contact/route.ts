@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { saveContactSubmission } from '@/lib/supabase';
+import { saveContactSubmission } from '@/lib/contact-storage';
 import { sendContactEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {

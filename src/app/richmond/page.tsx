@@ -21,48 +21,48 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Power Washing Richmond VA | Professional Services in Richmond Virginia",
-  description: "Professional power washing services in Richmond, VA. House washing, deck cleaning, concrete cleaning, and more. Licensed, insured, locally owned. Free estimates!",
-  keywords: "power washing Richmond VA, pressure washing Richmond Virginia, house washing Richmond, deck cleaning Richmond, concrete cleaning Richmond, roof cleaning Richmond, gutter cleaning Richmond, window cleaning Richmond"
+  title: "Junk Removal Richmond VA | Professional Junk Removal Services in Richmond Virginia",
+  description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond"
 };
 
 export default function RichmondPage() {
   const services = [
     {
-      name: "House Washing",
-      description: "Complete exterior house cleaning including siding, gutters, and walkways",
-      price: "Starting at $200",
-      features: ["Soft washing technique", "Gutter cleaning included", "Mold removal", "Window cleaning add-on"]
-    },
-    {
-      name: "Deck & Fence Cleaning",
-      description: "Professional deck and fence cleaning with wood-safe solutions",
+      name: "Junk Removal",
+      description: "Complete junk removal service for homes and businesses throughout Richmond",
       price: "Starting at $150",
-      features: ["Wood-safe cleaning", "Stain preparation", "Sealing recommendations", "Pressure washing"]
+      features: ["Same-day service available", "All items accepted", "Eco-friendly disposal", "Free estimates"]
     },
     {
-      name: "Concrete Cleaning",
-      description: "Driveway, sidewalk, and patio cleaning with oil stain removal",
+      name: "Furniture Removal",
+      description: "Professional furniture removal including large items and heavy pieces",
       price: "Starting at $100",
-      features: ["Oil stain removal", "Pressure washing", "Sealing options", "Eco-friendly solutions"]
+      features: ["Large furniture handling", "Safe removal techniques", "Donation options", "Responsible disposal"]
     },
     {
-      name: "Roof Cleaning",
-      description: "Safe roof cleaning and moss removal with low-pressure techniques",
+      name: "Estate Cleanout",
+      description: "Complete estate cleanout services for homes and properties",
       price: "Starting at $300",
-      features: ["Low-pressure cleaning", "Moss removal", "Gutter cleaning", "Shingle-safe techniques"]
+      features: ["Full property cleanout", "Sensitive handling", "Item sorting", "Family consultation"]
     },
     {
-      name: "Window Cleaning",
-      description: "Professional window cleaning for crystal-clear results",
-      price: "Starting at $120",
-      features: ["Interior and exterior", "Streak-free finish", "Screen cleaning", "Frame cleaning"]
+      name: "Construction Debris",
+      description: "Construction debris removal for contractors and homeowners",
+      price: "Starting at $200",
+      features: ["Construction materials", "Concrete removal", "Heavy debris handling", "Contractor discounts"]
     },
     {
-      name: "Gutter Cleaning",
-      description: "Complete gutter cleaning and maintenance service",
+      name: "Appliance Removal",
+      description: "Safe appliance removal including refrigerators, washers, and more",
       price: "Starting at $80",
-      features: ["Debris removal", "Downspout cleaning", "Gutter inspection", "Minor repairs"]
+      features: ["All appliance types", "Safe disconnection", "Responsible disposal", "Same-day service"]
+    },
+    {
+      name: "Yard Waste Removal",
+      description: "Yard waste and debris removal for residential properties",
+      price: "Starting at $120",
+      features: ["Yard debris cleanup", "Branches and logs", "Seasonal cleanup", "Eco-friendly disposal"]
     }
   ];
 
@@ -91,8 +91,8 @@ export default function RichmondPage() {
       {/* Hero Section */}
       <section className="relative text-white py-20 overflow-hidden">
         <Image
-          src="/images/powerwashing deck.jpg"
-          alt="Power washing services in Richmond Virginia"
+          src="/images/junk-removal-richmond-va01.jpg"
+          alt="Junk removal services in Richmond Virginia"
           fill
           className="object-cover"
           priority
@@ -102,57 +102,66 @@ export default function RichmondPage() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center">
-            <h1 className="text-5xl lg:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white mb-8 leading-tight uppercase tracking-tight">
               PROFESSIONAL{" "}
-              <span className="inline-block font-black text-6xl lg:text-8xl text-[#FFA500]" style={{ 
+              <span className="inline-block font-black text-2xl md:text-3xl lg:text-4xl xl:text-6xl text-[#dc2626]" style={{ 
                 textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
               }}>
-                POWER WASHING
+                JUNK REMOVAL
               </span>
               <br />
               IN RICHMOND, VA
               </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-semibold">
-                Richmond's most trusted power washing company. We've been serving the Richmond metro area for over 10 years with professional, reliable, and affordable power washing services.
+            <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-semibold">
+                Richmond's most trusted junk removal company. We've been serving the Richmond metro area for years with professional, reliable, and affordable junk removal services.
               </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
-              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
+              <Button size="lg" className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
                 Get Free Estimate
               </Button>
             </Link>
-            <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-xl px-8 py-4 font-black uppercase tracking-wide italic">
-              CALL (804) 555-0123
+              <Button size="lg" className="bg-[#1e40af] hover:bg-[#1e3a8a] text-white text-lg md:text-xl px-6 md:px-8 py-3 md:py-4 font-black uppercase tracking-wide italic">
+              CALL (804) 494-7999
                 </Button>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
 
       {/* Why Choose Us for Richmond */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">WHY RICHMOND</span>{" "}
-            <span className="text-[#FFA500] italic">HOMEOWNERS</span>{" "}
+            <span className="text-[#dc2626]">RESIDENTS</span>{" "}
             <span className="text-[#1e40af]">CHOOSE US</span>
           </h2>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-[#1e40af] mb-6">
-                Local Richmond Power Washing Experts
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1e40af] mb-6">
+                Local Richmond Junk Removal Experts
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                As a locally owned and operated business, we understand Richmond's unique climate and architectural styles. 
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                As a locally owned and operated business, we understand Richmond's diverse neighborhoods and unique needs. 
                 From historic homes in The Fan to modern properties in Short Pump, we have the experience and knowledge 
-                to clean every type of property safely and effectively.
+                to handle any junk removal job safely and efficiently.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                Richmond's rich history means many homes have accumulated decades of belongings. Whether you're dealing with 
+                estate cleanouts in Church Hill, furniture removal from Shockoe Bottom apartments, or construction debris 
+                from downtown renovations, our Richmond junk removal experts know how to navigate the city's unique challenges.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 mb-6">
+                We serve all Richmond neighborhoods including The Fan District, Carytown, Jackson Ward, Oregon Hill, 
+                and Westover Hills. Our local knowledge helps us provide faster service and better pricing than 
+                out-of-town companies who don't understand Richmond's specific needs.
               </p>
               <ul className="space-y-3">
                 {[
                   "Licensed, bonded, and fully insured",
-                  "10+ years serving Richmond area", 
+                  "Years of experience serving Richmond area", 
                   "Free estimates with no hidden fees",
                   "Same-day service available",
                   "100% satisfaction guarantee"
@@ -164,10 +173,10 @@ export default function RichmondPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative w-full h-96">
+            <div className="relative w-full h-64 md:h-96">
               <Image 
-                src="/images/richmond va image.jpeg" 
-                alt="Richmond power washing professionals at work"
+                src="/images/richmond-va-update.jpg" 
+                alt="Richmond junk removal professionals at work"
                 fill
                 className="object-cover rounded-lg"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -179,19 +188,19 @@ export default function RichmondPage() {
       </section>
 
       {/* Google Reviews Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
                 <span className="text-[#1e40af]">WHAT OUR</span>{" "}
-                <span className="text-[#FFA500] italic">RICHMOND</span>{" "}
+                <span className="text-[#dc2626]">RICHMOND</span>{" "}
                 <span className="text-[#1e40af]">CUSTOMERS SAY</span>
               </h2>
               
               <div className="mt-8 flex justify-center">
                 <Image 
-                  src="/images/google five star rating 2.png"
+                  src="/images/google-five-star-rating.png"
                   alt="Google 5 Star Rating"
                   width={200}
                   height={100}
@@ -209,40 +218,42 @@ export default function RichmondPage() {
       </section>
 
       {/* Services in Richmond */}
-      <section className="py-16 bg-[#f3f4f6]">
+      <section className="py-12 md:py-16 bg-[#f3f4f6]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
-            <span className="text-[#1e40af]">OUR POWER WASHING</span>{" "}
-            <span className="text-[#FFA500] italic">SERVICES</span>{" "}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
+            <span className="text-[#1e40af]">OUR JUNK REMOVAL</span>{" "}
+            <span className="text-[#dc2626]">SERVICES</span>{" "}
             <span className="text-[#1e40af]">IN RICHMOND</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing house.jpg"
-                  alt="House Washing Richmond"
+                  src="/images/junk-removal-1.jpg"
+                  alt="Junk Removal Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">House Washing</h3>
-                  <p className="text-gray-600 mb-4">
-                    Transform your Richmond home's exterior with our professional house washing service. We specialize in cleaning all siding types found throughout the city.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Junk Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Complete junk removal service for homes and businesses throughout Richmond. We handle all types of unwanted items safely and efficiently. 
+                    From single item pickups to full house cleanouts, our Richmond team provides professional junk removal services across all neighborhoods 
+                    including The Fan, Carytown, Church Hill, and Jackson Ward.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Gentle soft washing techniques
+                      Same-day service available
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Complete mold and mildew removal
+                      All items accepted
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Gutter cleaning service included
+                      Eco-friendly disposal
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -255,29 +266,31 @@ export default function RichmondPage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/powerwashing deck.jpg"
-                  alt="Deck Cleaning Richmond"
+                  src="/images/mattress-removal.jpg"
+                  alt="Furniture Removal Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Deck & Fence Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Revitalize your Richmond deck and fence with our specialized wood cleaning service. Perfect for the humid Virginia climate.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Furniture Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Professional furniture removal including large items and heavy pieces. We handle all furniture types with care and professionalism. 
+                    Richmond's historic homes often have large furniture that's difficult to move through narrow doorways and tight spaces. 
+                    Our experienced team knows how to safely remove furniture from Richmond's unique architectural layouts.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Specialized wood-safe cleaning methods
+                      Large furniture handling
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Professional stain preparation
+                      Safe removal techniques
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Expert sealing recommendations
+                      Donation options available
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -290,29 +303,31 @@ export default function RichmondPage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/Pressure washing concrete 2 - commercial.jpg"
-                  alt="Concrete Cleaning Richmond"
+                  src="/images/concrete-removal.jpg"
+                  alt="Construction Debris Removal Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Concrete Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Restore your Richmond driveway, sidewalks, and patios to pristine condition. We handle tough Virginia weather stains.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Construction Debris</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Construction debris removal for contractors and homeowners. We handle all types of construction materials and heavy debris. 
+                    Richmond's booming construction market means lots of renovation projects. Whether you're a contractor working on 
+                    downtown office buildings or a homeowner renovating a historic Fan District home, we can handle your construction debris.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Advanced oil stain removal technology
+                      Construction materials
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      High-pressure cleaning systems
+                      Concrete removal
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Protective sealing options available
+                      Heavy debris handling
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -325,29 +340,31 @@ export default function RichmondPage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing roof - residential.jpg"
-                  alt="Roof Cleaning Richmond"
+                  src="/images/piano-removal.jpg"
+                  alt="Appliance Removal Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Roof Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Safely clean your Richmond roof with our low-pressure techniques. Protect your investment from Virginia's humid climate.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Appliance Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Safe appliance removal including refrigerators, washers, dryers, and more. We handle all appliance types with care. 
+                    Richmond's diverse housing stock means appliances of all sizes and ages. From modern condos in Shockoe Bottom to 
+                    historic homes in Church Hill, we safely remove and properly dispose of all appliance types.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Gentle low-pressure cleaning methods
+                      All appliance types
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Effective moss and algae removal
+                      Safe disconnection
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Shingle-safe cleaning techniques
+                      Responsible disposal
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -360,29 +377,31 @@ export default function RichmondPage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing window.jpg"
-                  alt="Window Cleaning Richmond"
+                  src="/images/residential-junk.jpg"
+                  alt="Estate Cleanout Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Window Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Achieve crystal-clear windows throughout your Richmond home. Professional interior and exterior cleaning service.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Estate Cleanout</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Complete estate cleanout services for homes and properties. We handle sensitive situations with care and professionalism. 
+                    Richmond's historic neighborhoods are filled with homes that have been in families for generations. When the time comes 
+                    for estate cleanouts, our compassionate team helps families through this difficult process while preserving valuable items.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Complete interior and exterior cleaning
+                      Full property cleanout
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Guaranteed streak-free finish
+                      Sensitive handling
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Screen cleaning and maintenance
+                      Family consultation
                     </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
@@ -395,50 +414,52 @@ export default function RichmondPage() {
             <Card className="bg-white overflow-hidden hover:shadow-xl transition-shadow">
               <CardContent className="p-0">
                 <Image
-                  src="/images/pressure washing gutter.jpg"
-                  alt="Gutter Cleaning Richmond"
+                  src="/images/yard-waste.jpg"
+                  alt="Yard Waste Removal Richmond"
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#dc2626] mb-3">Gutter Cleaning</h3>
-                  <p className="text-gray-600 mb-4">
-                    Keep your Richmond home protected with our comprehensive gutter cleaning service. Essential for Virginia's seasonal weather.
+                  <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Yard Waste Removal</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-4">
+                    Yard waste and debris removal for residential properties. We handle all types of yard debris and seasonal cleanup. 
+                    Richmond's mature trees and historic landscapes create beautiful neighborhoods, but they also generate lots of yard waste. 
+                    From fallen branches in The Fan to seasonal cleanup in Westover Hills, we help keep Richmond's neighborhoods clean and beautiful.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Complete debris removal and disposal
+                      Yard debris cleanup
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Thorough downspout cleaning
+                      Branches and logs
                     </li>
                     <li className="flex items-center gap-2 text-sm text-gray-700">
                       <Check className="w-4 h-4 text-green-500" />
-                      Professional gutter inspection
+                      Seasonal cleanup
                       </li>
                   </ul>
                   <Button className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white font-black uppercase tracking-wide italic">
                     FREE QUOTE
                   </Button>
                 </div>
-                </CardContent>
-              </Card>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Richmond Neighborhoods */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">WE SERVE ALL</span>{" "}
-            <span className="text-[#FFA500] italic">RICHMOND</span>{" "}
+            <span className="text-[#dc2626]">RICHMOND</span>{" "}
             <span className="text-[#1e40af]">NEIGHBORHOODS</span>
           </h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {neighborhoods.map((neighborhood, index) => (
               <Card key={index} className="bg-white text-center p-4 hover:shadow-md transition-shadow">
                 <CardContent className="p-2">
@@ -447,51 +468,29 @@ export default function RichmondPage() {
               </Card>
             ))}
           </div>
-          <p className="text-center mt-8 text-gray-600">
-            Don't see your neighborhood? We serve all of Richmond and surrounding areas. 
-            <Link href="#contact" className="text-[#1e40af] font-semibold ml-1">Contact us to confirm service in your area →</Link>
-          </p>
-        </div>
-      </section>
-
-      {/* Richmond Testimonials */}
-      <section className="py-16 bg-[#f3f4f6]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
-            <span className="text-[#1e40af]">WHAT RICHMOND</span>{" "}
-            <span className="text-[#FFA500] italic">CUSTOMERS</span>{" "}
-            <span className="text-[#1e40af]">SAY</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "Outstanding service! They cleaned our entire house in The Fan District and our deck. The team was professional, punctual, and the results exceeded our expectations. Highly recommend!",
-                author: "Sarah M., The Fan District",
-                rating: 5
-              },
-              {
-                quote: "I've used Richmond Power Washing Pro three times now for my home in Carytown. They always do excellent work and their pricing is very fair. The deck looks brand new after their cleaning.",
-                author: "James T., Carytown",
-                rating: 5
-              },
-              {
-                quote: "Fast, reliable, and thorough. They cleaned our driveway and removed oil stains I thought were permanent. Will definitely use them again for our Church Hill home!",
-                author: "Emily & David, Church Hill",
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-white border-l-4 border-[#dc2626]">
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-lg italic text-gray-600 mb-4">&quot;{testimonial.quote}&quot;</p>
-                  <p className="font-semibold text-[#1e40af]">— {testimonial.author}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="mt-8 p-4 md:p-6 bg-white rounded-lg shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold text-[#1e40af] mb-4 text-center">Richmond Neighborhoods We Serve</h3>
+            <p className="text-sm md:text-base text-gray-600 mb-4 text-center">
+              Junk Goats proudly serves all Richmond neighborhoods with our professional junk removal services. 
+              Our local Richmond team understands the unique characteristics of each area and provides tailored 
+              services to meet the specific needs of residents and businesses throughout the city.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>The Fan District:</strong> Known for its historic row houses and narrow streets, we use specialized 
+              equipment to navigate these unique spaces for furniture removal and estate cleanouts.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>Carytown:</strong> This vibrant shopping district often needs commercial junk removal services. 
+              We help local businesses maintain clean storefronts and remove old fixtures and equipment.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              <strong>Church Hill:</strong> Richmond's oldest neighborhood requires careful handling of historic properties. 
+              Our team respects the architectural integrity while providing efficient junk removal services.
+            </p>
+            <p className="text-center mt-6 text-sm md:text-base text-gray-600">
+              Don't see your neighborhood? We serve all of Richmond and surrounding areas. 
+              <Link href="#contact" className="text-[#1e40af] font-semibold ml-1">Contact us to confirm service in your area →</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -501,7 +500,7 @@ export default function RichmondPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-5xl font-black text-center mb-12 uppercase tracking-tight">
             <span className="text-[#1e40af]">READY TO</span>{" "}
-            <span className="text-[#FFA500] italic">TRANSFORM</span>{" "}
+            <span className="text-[#dc2626]">CLEAN OUT</span>{" "}
             <span className="text-[#1e40af]">YOUR RICHMOND PROPERTY?</span>
           </h2>
           <div className="max-w-4xl mx-auto">
@@ -517,9 +516,9 @@ export default function RichmondPage() {
                     <ul className="space-y-3">
                       {[
                         "Licensed, bonded, and fully insured",
-                        "10+ years serving Richmond area",
+                        "Years of experience serving Richmond area",
                         "Professional-grade equipment",
-                        "Eco-friendly cleaning solutions",
+                        "Eco-friendly disposal methods",
                         "100% satisfaction guarantee"
                       ].map((item) => (
                         <li key={item} className="flex items-center gap-3">
@@ -535,7 +534,7 @@ export default function RichmondPage() {
                   <CardContent className="p-6">
                     <h4 className="text-xl font-bold text-[#1e40af] mb-4">Richmond Service Areas</h4>
                     <p className="text-gray-600 mb-3">
-                      We proudly serve all of Richmond and surrounding areas including:
+                      We proudly provide junk removal services throughout Richmond and surrounding areas including:
                     </p>
                     <div className="grid grid-cols-2 gap-2 text-sm">
                       {["The Fan District", "Carytown", "Church Hill", "Shockoe Bottom", "Jackson Ward", "Oregon Hill", "Westover Hills", "Forest Hill"].map((area) => (
