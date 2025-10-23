@@ -34,7 +34,6 @@ const nextConfig = {
   
   // Enable static optimization
   trailingSlash: false,
-  swcMinify: true,
 }
 
 module.exports = nextConfig
