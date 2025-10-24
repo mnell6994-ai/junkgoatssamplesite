@@ -350,7 +350,7 @@ export default function HowItWorks() {
               <div className="space-y-6">
                 <div className="text-center">
                   <Image
-                    src="/images/google-five-star-rating.jpg"
+                    src="/images/google-five-star-rating.png"
                     alt="Google Five Star Rating"
                     width={200}
                     height={60}
