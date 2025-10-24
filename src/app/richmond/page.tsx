@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -8,7 +6,6 @@ import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-r
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
 
 // Lazy load components
 const TrustBadges = dynamic(() => import("@/components/trust-badges"), {
@@ -30,19 +27,6 @@ export const metadata = {
 };
 
 export default function RichmondPage() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   const services = [
     {
       name: "Junk Removal",
