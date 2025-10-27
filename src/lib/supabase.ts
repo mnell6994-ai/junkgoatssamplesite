@@ -1,71 +1,45 @@
-// Local storage-based contact management (no external dependencies)
-// This replaces the previous Supabase integration
+import { createClient } from '@supabase/supabase-js'
 
-export interface ContactSubmission {
-  id?: string
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
+
+// Debug logging
+console.log('Supabase URL:', supabaseUrl);
+console.log('Supabase Key length:', supabaseAnonKey?.length);
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
+// Database types
+export interface Client {
+  id: string
   name: string
   email: string
   phone: string
-  service?: string
-  message?: string
-  property_size?: string
-  created_at?: string
-  status?: 'new' | 'contacted' | 'completed' | 'cancelled'
+  business_name: string
+  website_url: string
+  created_at: string
+  status: 'active' | 'inactive' | 'pending'
 }
 
-export async function saveContactSubmission(data: ContactSubmission) {
-  try {
-    const submission = {
-      id: 'local-' + Date.now(),
-      ...data,
-      created_at: new Date().toISOString(),
-      status: 'new' as const
-    }
-
-    // Store in localStorage (client-side) and log to console (server-side)
-    if (typeof window !== 'undefined') {
-      const existing = JSON.parse(localStorage.getItem('contact_submissions') || '[]')
-      existing.push(submission)
-      localStorage.setItem('contact_submissions', JSON.stringify(existing))
-    }
-
-    console.log('Contact form submission:', submission)
-    return { success: true, data: [submission] }
-  } catch (error) {
-    console.error('Error saving contact submission:', error)
-    return { success: false, error: 'Failed to save submission' }
-  }
+export interface Project {
+  id: string
+  client_id: string
+  name: string
+  description: string
+  status: 'planning' | 'in_progress' | 'review' | 'completed'
+  created_at: string
+  updated_at: string
 }
 
-export async function getContactSubmissions() {
-  try {
-    if (typeof window !== 'undefined') {
-      const submissions = JSON.parse(localStorage.getItem('contact_submissions') || '[]')
-      return { success: true, data: submissions.reverse() } // Most recent first
-    }
-    return { success: true, data: [] }
-  } catch (error) {
-    console.error('Error fetching contact submissions:', error)
-    return { success: false, error: 'Failed to fetch submissions' }
-  }
+export interface Task {
+  id: string
+  project_id: string
+  title: string
+  description: string
+  status: 'todo' | 'in_progress' | 'completed'
+  priority: 'low' | 'medium' | 'high'
+  due_date: string
+  created_at: string
 }
 
-export async function updateSubmissionStatus(id: string, status: ContactSubmission['status']) {
-  try {
-    if (typeof window !== 'undefined') {
-      const submissions = JSON.parse(localStorage.getItem('contact_submissions') || '[]')
-      const index = submissions.findIndex((sub: ContactSubmission) => sub.id === id)
-      
-      if (index !== -1) {
-        submissions[index].status = status
-        localStorage.setItem('contact_submissions', JSON.stringify(submissions))
-        return { success: true, data: [submissions[index]] }
-      }
-    }
-    
-    return { success: false, error: 'Submission not found' }
-  } catch (error) {
-    console.error('Error updating submission status:', error)
-    return { success: false, error: 'Failed to update status' }
-  }
-}
+

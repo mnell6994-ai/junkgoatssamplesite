@@ -27,11 +27,11 @@ export default function Footer() {
           <div>
             <h4 className="text-[#FFA500] text-xl font-black mb-6 uppercase tracking-tight">Services</h4>
             <ul className="space-y-3 text-lg">
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Junk Removal</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Furniture Removal</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Yard Waste Removal</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Construction Debris</Link></li>
-              <li><Link href="/services" className="hover:text-[#FFA500] transition-colors font-semibold">Estate Cleanout</Link></li>
+              <li><Link href="/services/junk-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Junk Removal</Link></li>
+              <li><Link href="/services/furniture-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Furniture Removal</Link></li>
+              <li><Link href="/services/yard-waste-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Yard Waste Removal</Link></li>
+              <li><Link href="/services/construction-debris" className="hover:text-[#FFA500] transition-colors font-semibold">Construction Debris</Link></li>
+              <li><Link href="/services/estate-cleanout" className="hover:text-[#FFA500] transition-colors font-semibold">Estate Cleanout</Link></li>
             </ul>
           </div>
           <div>
