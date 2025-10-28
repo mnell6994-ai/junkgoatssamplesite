@@ -86,7 +86,7 @@ export default function Header() {
             />
           </Link>
           
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Always visible for testing */}
           <button
             ref={menuButtonRef}
             onClick={(e) => {
@@ -97,7 +97,6 @@ export default function Header() {
                 return !prev;
               });
             }}
-            className="md:hidden"
             aria-label="Toggle mobile menu"
             style={{ 
               pointerEvents: 'auto', 
@@ -108,7 +107,8 @@ export default function Header() {
               color: 'white',
               padding: '8px',
               zIndex: 9999,
-              position: 'relative'
+              position: 'relative',
+              display: 'block'
             }}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
