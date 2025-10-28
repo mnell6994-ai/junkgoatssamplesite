@@ -14,6 +14,7 @@ export default function Header() {
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const locationsDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
@@ -24,7 +25,9 @@ export default function Header() {
     }
     // Close mobile menu when clicking outside
     const target = event.target as HTMLElement;
-    if (isMobileMenuOpen && !mobileMenuRef.current?.contains(target) && !target.closest('button[aria-label="Toggle mobile menu"]')) {
+    if (isMobileMenuOpen && 
+        !mobileMenuRef.current?.contains(target) && 
+        !menuButtonRef.current?.contains(target)) {
       setIsMobileMenuOpen(false);
     }
   }, [isMobileMenuOpen]);
@@ -70,7 +73,11 @@ export default function Header() {
           
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            ref={menuButtonRef}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
             className="md:hidden text-white p-2 z-50 relative"
             aria-label="Toggle mobile menu"
           >
