@@ -22,7 +22,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 
 export const metadata = {
   title: "Junk Removal Richmond VA | Professional Junk Removal Services",
-  description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  description: "Professional junk removal services in Richmond, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
   keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond"
 };
 

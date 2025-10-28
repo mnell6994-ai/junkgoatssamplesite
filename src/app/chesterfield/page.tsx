@@ -22,7 +22,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 
 export const metadata = {
   title: "Junk Removal Chesterfield VA | Professional Junk Removal Services",
-  description: "Professional junk removal services in Chesterfield County, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  description: "Professional junk removal services in Chesterfield County, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
   keywords: "junk removal Chesterfield VA, junk removal Chesterfield County, furniture removal Chester, estate cleanout Moseley, construction debris Midlothian, appliance removal Chesterfield County Virginia"
 };
 

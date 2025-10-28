@@ -22,7 +22,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 
 export const metadata = {
   title: "Junk Removal Midlothian VA | Professional Junk Removal Services",
-  description: "Professional junk removal services in Midlothian, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  description: "Professional junk removal services in Midlothian, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
   keywords: "junk removal Midlothian VA, junk removal Midlothian Virginia, furniture removal Midlothian, estate cleanout Midlothian, construction debris Midlothian, appliance removal Midlothian Virginia"
 };
 

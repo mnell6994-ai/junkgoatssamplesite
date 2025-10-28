@@ -4,7 +4,7 @@ import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Junk Goats Junk Removal Richmond VA",
-  description: "Privacy Policy for Junk Goats Junk Removal services in Richmond, VA.",
+  description: "Privacy Policy for Junk Goats Junk Removal services in Richmond, VA. Learn how we protect your personal information and data privacy.",
 };
 
 export default function PrivacyPage() {
