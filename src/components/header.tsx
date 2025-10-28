@@ -91,7 +91,11 @@ export default function Header() {
             ref={menuButtonRef}
             onClick={(e) => {
               e.stopPropagation();
-              setIsMobileMenuOpen(!isMobileMenuOpen);
+              console.log('Button clicked, current state:', isMobileMenuOpen);
+              setIsMobileMenuOpen((prev) => {
+                console.log('Setting to:', !prev);
+                return !prev;
+              });
             }}
             className="md:hidden text-white p-2 z-50 relative"
             aria-label="Toggle mobile menu"
@@ -260,6 +264,8 @@ export default function Header() {
           {isMobileMenuOpen && (
             <div ref={mobileMenuRef} className="absolute top-full left-0 right-0 bg-[#1e40af] shadow-lg md:hidden z-40">
               <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
+                {/* Debug output */}
+                <div className="text-white text-xs mb-2">Mobile menu is open</div>
                 {/* Mobile Services Dropdown */}
                 <div>
                   <button
