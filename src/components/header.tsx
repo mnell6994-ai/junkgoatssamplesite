@@ -86,6 +86,18 @@ export default function Header() {
             />
           </Link>
           
+          {/* Test div - should be visible */}
+          <div style={{ 
+            backgroundColor: 'red', 
+            color: 'white', 
+            padding: '10px', 
+            border: '2px solid yellow',
+            zIndex: 9999,
+            position: 'relative'
+          }}>
+            TEST DIV
+          </div>
+          
           {/* Mobile Menu Button - Always visible for testing */}
           <button
             ref={menuButtonRef}
