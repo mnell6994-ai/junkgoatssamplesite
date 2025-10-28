@@ -457,24 +457,28 @@ export default function Home() {
             {[
               {
                 name: "Richmond",
+                url: "/richmond",
                 image: "/images/richmond-va-update.jpg",
                 description: "Professional junk removal services throughout Richmond and surrounding areas.",
                 alt: "Junk removal services in Richmond Virginia"
               },
               {
                 name: "Henrico County", 
+                url: "/henrico",
                 image: "/images/henrico-county-update.jpg",
                 description: "Serving all of Henrico County including Glen Allen, Short Pump, and Tuckahoe areas.",
                 alt: "Junk removal services in Henrico County Virginia"
               },
               {
                 name: "Chesterfield",
+                url: "/chesterfield",
                 image: "/images/chesterfield-image.jpg", 
                 description: "Professional junk removal services throughout Chesterfield County and Midlothian.",
                 alt: "Junk removal in Chesterfield County Virginia"
               },
               {
                 name: "Mechanicsville",
+                url: "/mechanicsville",
                 image: "/images/mechanicsville-update.jpg",
                 description: "Serving Mechanicsville and surrounding Hanover County areas with expert junk removal.",
                 alt: "Junk removal services in Mechanicsville Virginia"
@@ -491,7 +495,7 @@ export default function Home() {
                   <h3 className="text-lg md:text-xl font-black text-[#1e40af] mb-3">{location.name}</h3>
                   <p className="text-sm md:text-base text-gray-600 mb-3">{location.description}</p>
                   <p className="text-[#dc2626] font-semibold mb-3">✓ Available Now</p>
-                  <Link href={`/${location.name.toLowerCase().replace(' ', '-')}`} className="text-[#1e40af] font-semibold hover:text-[#dc2626] transition-colors">
+                  <Link href={location.url || `/${location.name.toLowerCase().replace(' ', '-')}`} className="text-[#1e40af] font-semibold hover:text-[#dc2626] transition-colors">
                     View {location.name} Services →
                   </Link>
                 </div>
