@@ -17,23 +17,17 @@ export default function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
+    // Only handle clicks outside for desktop dropdowns
     if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
       setIsServicesOpen(false);
     }
     if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(event.target as Node)) {
       setIsLocationsOpen(false);
     }
-    // Close mobile menu when clicking outside
-    const target = event.target as HTMLElement;
-    if (isMobileMenuOpen && 
-        !mobileMenuRef.current?.contains(target) && 
-        !menuButtonRef.current?.contains(target)) {
-      setIsMobileMenuOpen(false);
-    }
-  }, [isMobileMenuOpen]);
+  }, []);
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside, { passive: true });
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -53,6 +47,27 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Handle mobile menu clicks outside
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(target) && 
+        !menuButtonRef.current?.contains(target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
