@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function ApplianceRemovalPage() {
                 At Junk Goats, we specialize in safe and efficient appliance removal services throughout the Richmond area. Our experienced team understands that appliances can be heavy, awkward to move, and require special handling to prevent damage to your property and the appliance itself.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Whether you're replacing old appliances, moving to a new home, or simply need to dispose of non-working appliances, our appliance removal services are designed to make the process as easy as possible. We handle all types of appliances including refrigerators, washers, dryers, dishwashers, ovens, and more.
+                Whether you're replacing old appliances, moving to a new home, or simply need to dispose of non-working appliances, our appliance removal services are designed to make the process as easy as possible. We handle all types of appliances including refrigerators, washers, dryers, dishwashers, ovens, and more. We also provide <Link href="/services/furniture-removal" className="text-[#1e40af] font-semibold hover:underline">furniture removal</Link> and <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">general junk removal services</Link>.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
                 Our Richmond appliance removal team is equipped with the proper tools and techniques to safely remove appliances from any location, including tight spaces, upper floors, and difficult-to-access areas. We ensure your property is protected during the removal process.
@@ -450,6 +451,9 @@ export default function ApplianceRemovalPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="appliance-removal" />
 
       <Footer />
     </div>

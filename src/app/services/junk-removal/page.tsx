@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -111,7 +112,7 @@ export default function JunkRemovalPage() {
                 Whether you're clearing out a single room, an entire home, or managing a commercial property, our junk removal services are designed to make the process as stress-free as possible. We understand that junk removal can be overwhelming, which is why we handle every aspect of the job from start to finish.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Our Richmond junk removal services include same-day pickup, eco-friendly disposal methods, and transparent pricing with no hidden fees. We accept all types of non-hazardous items including furniture, electronics, appliances, construction debris, and general household junk.
+                Our Richmond junk removal services include same-day pickup, eco-friendly disposal methods, and transparent pricing with no hidden fees. We accept all types of non-hazardous items including <Link href="/services/furniture-removal" className="text-[#1e40af] font-semibold hover:underline">furniture</Link>, electronics, <Link href="/services/appliance-removal" className="text-[#1e40af] font-semibold hover:underline">appliances</Link>, <Link href="/services/construction-debris" className="text-[#1e40af] font-semibold hover:underline">construction debris</Link>, and general household junk.
               </p>
               <ul className="space-y-3">
                 {[
@@ -190,7 +191,7 @@ export default function JunkRemovalPage() {
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h4 className="text-xl font-bold text-[#dc2626] mb-4">Home Cleanouts</h4>
                 <p className="text-gray-600 mb-4">
-                  Complete home cleanouts for any size property. We handle everything from single rooms to entire houses, ensuring every item is properly sorted, recycled, or disposed of responsibly.
+                  Complete home cleanouts for any size property. We handle everything from single rooms to entire houses, ensuring every item is properly sorted, recycled, or disposed of responsibly. For specialized needs, we also offer <Link href="/services/estate-cleanout" className="text-[#1e40af] font-semibold hover:underline">estate cleanout services</Link>.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-gray-700">
@@ -239,7 +240,7 @@ export default function JunkRemovalPage() {
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <h4 className="text-xl font-bold text-[#dc2626] mb-4">Office Cleanouts</h4>
                 <p className="text-gray-600 mb-4">
-                  Professional office cleanout services for businesses of all sizes. We handle furniture removal, equipment disposal, and general office junk with minimal disruption to your operations.
+                  Professional <Link href="/services/office-cleanout" className="text-[#1e40af] font-semibold hover:underline">office cleanout services</Link> for businesses of all sizes. We handle furniture removal, equipment disposal, and general office junk with minimal disruption to your operations.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-gray-700">
@@ -288,7 +289,7 @@ export default function JunkRemovalPage() {
               <Card className="bg-white text-center p-6">
                 <CardContent className="p-4">
                   <h4 className="text-xl font-bold text-[#dc2626] mb-3">Furniture & Appliances</h4>
-                  <p className="text-gray-600">Sofas, tables, refrigerators, washers, dryers, and all major appliances</p>
+                  <p className="text-gray-600">Sofas, tables, refrigerators, washers, dryers, and all major appliances. Learn more about our <Link href="/services/furniture-removal" className="text-[#1e40af] font-semibold hover:underline">furniture removal</Link> and <Link href="/services/appliance-removal" className="text-[#1e40af] font-semibold hover:underline">appliance removal</Link> services.</p>
                 </CardContent>
               </Card>
               <Card className="bg-white text-center p-6">
@@ -345,6 +346,9 @@ export default function JunkRemovalPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="junk-removal" />
 
       {/* Contact Section */}
       <section id="contact" className="py-16">

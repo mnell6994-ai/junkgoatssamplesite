@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function FurnitureRemovalPage() {
                 At Junk Goats, we specialize in safe and efficient furniture removal services throughout the Richmond area. Our experienced team understands that furniture removal requires special care and attention to detail, especially when dealing with large, heavy, or valuable pieces.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Whether you're moving to a new home, downsizing, renovating, or simply replacing old furniture, our furniture removal services are designed to make the process as smooth as possible. We handle all types of furniture including sofas, beds, dining tables, dressers, bookcases, and office furniture.
+                Whether you're moving to a new home, downsizing, renovating, or simply replacing old furniture, our furniture removal services are designed to make the process as smooth as possible. We handle all types of furniture including sofas, beds, dining tables, dressers, bookcases, and office furniture. For larger projects, we also offer comprehensive <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">junk removal services</Link> and <Link href="/services/estate-cleanout" className="text-[#1e40af] font-semibold hover:underline">estate cleanout</Link> solutions.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
                 Our Richmond furniture removal team is equipped with the proper tools and techniques to safely remove furniture from any location, including narrow hallways, tight staircases, and difficult-to-access areas. We protect your property and ensure no damage occurs during the removal process.
@@ -450,6 +451,9 @@ export default function FurnitureRemovalPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="furniture-removal" />
 
       <Footer />
     </div>

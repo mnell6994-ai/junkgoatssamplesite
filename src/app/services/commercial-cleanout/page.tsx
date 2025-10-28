@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function CommercialCleanoutPage() {
                 At Junk Goats, we understand that commercial cleanouts require careful planning and execution to minimize business disruption. Our commercial cleanout services are designed to be efficient, professional, and thorough, ensuring your commercial space is completely cleared and ready for its next use.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Our experienced commercial cleanout team works around your business schedule, offering flexible timing options including evenings and weekends. We handle everything from office furniture and equipment to personal belongings and documents, ensuring a complete and professional cleanout process.
+                Our experienced commercial cleanout team works around your business schedule, offering flexible timing options including evenings and weekends. We handle everything from office furniture and equipment to personal belongings and documents, ensuring a complete and professional cleanout process. We also offer specialized <Link href="/services/office-cleanout" className="text-[#1e40af] font-semibold hover:underline">office cleanout services</Link> and <Link href="/services/construction-debris" className="text-[#1e40af] font-semibold hover:underline">construction debris removal</Link>.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 With our comprehensive commercial cleanout services, you can trust that every aspect of your commercial space will be handled professionally, from initial assessment to final cleanup, leaving your space completely ready for new tenants or business operations.
@@ -449,6 +450,9 @@ export default function CommercialCleanoutPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="commercial-cleanout" />
 
       <Footer />
     </div>

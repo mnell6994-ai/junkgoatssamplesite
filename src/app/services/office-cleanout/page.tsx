@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function OfficeCleanoutPage() {
                 At Junk Goats, we understand that office cleanouts require careful planning and execution to minimize business disruption. Our office cleanout services are designed to be efficient, professional, and thorough, ensuring your office space is completely cleared and ready for its next use.
               </p>
               <p className="text-lg text-gray-600 mb-6">
-                Our experienced office cleanout team works around your business schedule, offering flexible timing options including evenings and weekends. We handle everything from office furniture and equipment to personal belongings and documents, ensuring a complete and professional cleanout process.
+                Our experienced office cleanout team works around your business schedule, offering flexible timing options including evenings and weekends. We handle everything from office furniture and equipment to personal belongings and documents, ensuring a complete and professional cleanout process. We also provide <Link href="/services/commercial-cleanout" className="text-[#1e40af] font-semibold hover:underline">commercial cleanout services</Link>, <Link href="/services/furniture-removal" className="text-[#1e40af] font-semibold hover:underline">furniture removal</Link>, and comprehensive <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">junk removal</Link>.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 With our comprehensive office cleanout services, you can trust that every aspect of your office space will be handled professionally, from initial assessment to final cleanup, leaving your space completely ready for new tenants or business operations.
@@ -423,6 +424,9 @@ export default function OfficeCleanoutPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="office-cleanout" />
 
       <Footer />
     </div>

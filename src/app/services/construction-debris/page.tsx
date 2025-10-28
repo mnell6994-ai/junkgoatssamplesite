@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function ConstructionDebrisPage() {
                 At Junk Goats, we specialize in professional construction debris removal services for contractors, homeowners, and commercial properties throughout the Richmond area. Our experienced team understands the unique challenges of construction debris removal and provides efficient, cost-effective solutions.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Whether you're a contractor managing multiple projects or a homeowner tackling a renovation, our construction debris removal services are designed to keep your job site clean and your project on schedule. We handle all types of construction materials, from concrete and drywall to lumber and roofing materials.
+                Whether you're a contractor managing multiple projects or a homeowner tackling a renovation, our construction debris removal services are designed to keep your job site clean and your project on schedule. We handle all types of construction materials, from concrete and drywall to lumber and roofing materials. We also provide <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">junk removal</Link>, <Link href="/services/yard-waste-removal" className="text-[#1e40af] font-semibold hover:underline">yard waste removal</Link>, and <Link href="/services/commercial-cleanout" className="text-[#1e40af] font-semibold hover:underline">commercial cleanout services</Link>.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
                 Our Richmond construction debris removal team is equipped with specialized equipment and vehicles to handle heavy debris safely and efficiently. We offer flexible scheduling, competitive pricing, and contractor discounts for ongoing projects.
@@ -327,33 +328,6 @@ export default function ConstructionDebrisPage() {
               </div>
             </div>
           </div>
-
-          <div className="text-center">
-            <h3 className="text-3xl font-bold text-[#1e40af] mb-6">Specialized Construction Debris Services</h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
-              Our construction debris removal services extend beyond standard materials to include specialized debris that requires expert handling and disposal methods.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-white text-center p-6">
-                <CardContent className="p-4">
-                  <h4 className="text-xl font-bold text-[#dc2626] mb-3">Heavy Debris</h4>
-                  <p className="text-gray-600">Specialized equipment and handling for heavy construction debris and materials</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white text-center p-6">
-                <CardContent className="p-4">
-                  <h4 className="text-xl font-bold text-[#dc2626] mb-3">Safe Disposal</h4>
-                  <p className="text-gray-600">Environmentally responsible disposal of construction materials and debris</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white text-center p-6">
-                <CardContent className="p-4">
-                  <h4 className="text-xl font-bold text-[#dc2626] mb-3">Large Scale Projects</h4>
-                  <p className="text-gray-600">Comprehensive debris removal for large construction and demolition projects</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -450,6 +424,9 @@ export default function ConstructionDebrisPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="construction-debris" />
 
       <Footer />
     </div>

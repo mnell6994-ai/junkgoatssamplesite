@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -111,7 +112,7 @@ export default function EstateCleanoutPage() {
                 Our experienced estate cleanout team works closely with families to ensure that valuable items are preserved, sentimental belongings are handled with care, and the entire process is conducted with dignity and respect. We provide comprehensive estate cleanout services that cover every aspect of property clearing.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Whether you're dealing with a probate situation, preparing a property for sale, or simply need to clear out a family home, our Richmond estate cleanout services are tailored to meet your specific needs. We handle everything from initial consultation to final cleanup, making the process as stress-free as possible.
+                Whether you're dealing with a probate situation, preparing a property for sale, or simply need to clear out a family home, our Richmond estate cleanout services are tailored to meet your specific needs. We handle everything from initial consultation to final cleanup, making the process as stress-free as possible. Our services also include <Link href="/services/furniture-removal" className="text-[#1e40af] font-semibold hover:underline">furniture removal</Link>, <Link href="/services/appliance-removal" className="text-[#1e40af] font-semibold hover:underline">appliance removal</Link>, and comprehensive <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">junk removal</Link>.
               </p>
               <ul className="space-y-3">
                 {[
@@ -450,6 +451,9 @@ export default function EstateCleanoutPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="estate-cleanout" />
 
       <Footer />
     </div>

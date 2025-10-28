@@ -7,6 +7,7 @@ import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
 import ServiceSchema from "@/components/service-schema";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import RelatedServices from "@/components/related-services";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -108,7 +109,7 @@ export default function YardWasteRemovalPage() {
                 At Junk Goats, we specialize in comprehensive yard waste removal services throughout the Richmond area. Our experienced team understands that yard waste can accumulate quickly and become overwhelming, especially after storms, seasonal changes, or landscaping projects.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
-                Whether you're dealing with fallen branches from a storm, seasonal leaf cleanup, or ongoing yard maintenance, our yard waste removal services are designed to keep your property clean and well-maintained. We handle all types of organic yard waste including branches, leaves, grass clippings, and brush.
+                Whether you're dealing with fallen branches from a storm, seasonal leaf cleanup, or ongoing yard maintenance, our yard waste removal services are designed to keep your property clean and well-maintained. We handle all types of organic yard waste including branches, leaves, grass clippings, and brush. We also offer <Link href="/services/construction-debris" className="text-[#1e40af] font-semibold hover:underline">construction debris removal</Link> and comprehensive <Link href="/services/junk-removal" className="text-[#1e40af] font-semibold hover:underline">junk removal services</Link>.
               </p>
               <p className="text-base md:text-lg text-gray-600 mb-6">
                 Our Richmond yard waste removal team is equipped with the proper tools and equipment to handle yard waste efficiently and safely. We provide eco-friendly disposal options including composting and mulching whenever possible, helping to reduce waste and benefit the environment.
@@ -450,6 +451,9 @@ export default function YardWasteRemovalPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedServices currentService="yard-waste-removal" />
 
       <Footer />
     </div>
