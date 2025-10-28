@@ -20,8 +20,8 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Junk Removal Service Richmond VA | Professional Junk Removal Services",
-  description: "Professional junk removal services in Richmond, VA. Complete junk removal for homes and businesses. Same-day service, eco-friendly disposal, free estimates. Licensed and insured.",
+  title: "Junk Removal Richmond VA | Professional Junk Removal",
+  description: "Professional junk removal services in Richmond, VA. Complete junk removal for homes & businesses. Same-day service, eco-friendly disposal, free estimates. Licensed & insured.",
   keywords: "junk removal service, junk removal Richmond VA, professional junk removal, same day junk removal, eco friendly junk removal, junk removal company"
 };
 

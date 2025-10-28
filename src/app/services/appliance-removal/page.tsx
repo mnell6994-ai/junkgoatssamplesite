@@ -20,7 +20,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Appliance Removal Service Richmond VA | Professional Appliance Removal",
+  title: "Appliance Removal Richmond VA | Professional Appliance Disposal",
   description: "Professional appliance removal services in Richmond, VA. Safe removal of refrigerators, washers, dryers, dishwashers, and all major appliances. Same-day service, eco-friendly disposal.",
   keywords: "appliance removal service, appliance removal Richmond VA, refrigerator removal, washer dryer removal, dishwasher removal, appliance disposal"
 };

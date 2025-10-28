@@ -7,8 +7,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Services | Junk Goats Junk Removal - Richmond, VA",
-  description: "Professional junk removal services in Richmond, VA. Furniture removal, yard waste, construction debris, estate cleanouts, and more. Same-day service available.",
+  title: "Junk Removal Services Richmond VA | Junk Goats",
+  description: "Professional junk removal services in Richmond, VA. Furniture removal, yard waste, construction debris, estate cleanouts & more. Same-day service available!",
 };
 
 export default function ServicesPage() {

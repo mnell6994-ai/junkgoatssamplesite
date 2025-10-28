@@ -20,7 +20,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Construction Debris Removal Richmond VA | Professional Construction Debris Removal",
+  title: "Construction Debris Removal Richmond VA | Professional Cleanup",
   description: "Professional construction debris removal services in Richmond, VA. Construction materials, concrete removal, heavy debris handling, contractor discounts. Licensed and insured.",
   keywords: "construction debris removal, construction debris Richmond VA, concrete removal, construction materials removal, contractor debris removal, heavy debris removal"
 };

@@ -20,8 +20,8 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Yard Waste Removal Service Richmond VA | Professional Yard Waste Removal",
-  description: "Professional yard waste removal services in Richmond, VA. Tree branches, leaves, grass clippings, brush removal, and yard cleanup. Eco-friendly disposal and composting options.",
+  title: "Yard Waste Removal Richmond VA | Professional Yard Cleanup",
+  description: "Professional yard waste removal services in Richmond, VA. Tree branches, leaves, grass clippings, brush removal & yard cleanup. Eco-friendly disposal & composting.",
   keywords: "yard waste removal service, yard waste removal Richmond VA, tree branch removal, leaf removal, brush removal, yard cleanup, organic waste disposal"
 };
 

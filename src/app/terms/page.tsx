@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Junk Goats Junk Removal",
+  title: "Terms of Service | Junk Goats Junk Removal Richmond VA",
   description: "Terms of Service for Junk Goats Junk Removal services in Richmond, VA.",
 };
 

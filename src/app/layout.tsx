@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://junkgoatsrichmond.com'),
-  title: "Junk Goats Junk Removal | Professional Junk Removal Services in Richmond VA",
-  description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+  title: "Junk Goats Junk Removal | Richmond VA Junk Removal Services",
+  description: "Professional junk removal services in Richmond, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
   keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond",
   alternates: {
     canonical: 'https://junkgoatsrichmond.com',
   },
   openGraph: {
-    title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
-    description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+    title: "Junk Goats Junk Removal - Richmond VA Junk Removal Services",
+    description: "Professional junk removal services in Richmond, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
     type: "website",
     url: 'https://junkgoatsrichmond.com',
     siteName: 'Junk Goats Junk Removal',
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
-    description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
+    title: "Junk Goats Junk Removal - Richmond VA Junk Removal Services",
+    description: "Professional junk removal services in Richmond, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
     images: ["/images/junk-goats-logo.png"],
     site: '@junkgoats',
     creator: '@junkgoats',

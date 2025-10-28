@@ -20,7 +20,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Commercial Cleanout Service Richmond VA | Professional Commercial Cleanout Services",
+  title: "Commercial Cleanout Richmond VA | Business Cleanup Services",
   description: "Professional commercial cleanout services in Richmond, VA. Office cleanouts, business relocation, commercial junk removal, tenant cleanouts. Licensed and insured.",
   keywords: "commercial cleanout service, commercial cleanout Richmond VA, commercial cleanout company, commercial cleanout services, business relocation, commercial junk removal"
 };

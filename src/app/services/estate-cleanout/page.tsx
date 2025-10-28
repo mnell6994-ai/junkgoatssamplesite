@@ -20,7 +20,7 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 });
 
 export const metadata = {
-  title: "Estate Cleanout Service Richmond VA | Professional Estate Cleanout Services",
+  title: "Estate Cleanout Richmond VA | Professional Estate Cleanup",
   description: "Professional estate cleanout services in Richmond, VA. Compassionate, thorough estate cleanouts with sensitive handling. Free estimates, family consultation, item sorting, and responsible disposal.",
   keywords: "estate cleanout service, estate cleanout Richmond VA, estate cleanout company, estate cleanout services, probate cleanout, estate liquidation"
 };
