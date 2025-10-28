@@ -70,7 +70,13 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <>
+      {/* Debug info */}
+      <div style={{ position: 'fixed', top: 0, left: 0, zIndex: 99999, backgroundColor: 'red', color: 'white', padding: '10px' }}>
+        MOBILE MENU STATE: {isMobileMenuOpen ? 'OPEN' : 'CLOSED'}
+      </div>
+      
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled ? 'bg-[#1e40af] shadow-lg' : 'bg-transparent'
     }`} style={{ backgroundColor: isScrolled ? '#1e40af' : 'transparent' }}>
       <div className="w-full">
@@ -406,5 +412,6 @@ export default function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
