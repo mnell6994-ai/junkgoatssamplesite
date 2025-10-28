@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 text-lg font-bold text-white">
               <Phone className="w-6 h-6 text-[#FFA500]" />
-              <span>(804) 494-7999</span>
+              <a href="tel:+18044947999" className="hover:text-[#FFA500] transition-colors">(804) 494-7999</a>
             </div>
           </div>
           <div>
@@ -52,11 +52,11 @@ export default function Footer() {
             <ul className="space-y-3 text-lg">
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 text-[#FFA500]" />
-                <span>(804) 494-7999</span>
+                <a href="tel:+18044947999" className="hover:text-[#FFA500] transition-colors">(804) 494-7999</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-[#FFA500]" />
-                <span>info@junkgoatsrichmond.com</span>
+                <a href="mailto:info@junkgoatsrichmond.com" className="hover:text-[#FFA500] transition-colors">info@junkgoatsrichmond.com</a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-[#FFA500]" />
