@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function EstateCleanoutPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Estate Cleanout"
+        description="Professional estate cleanout services in Richmond, VA. Compassionate, thorough estate cleanouts with sensitive handling. Free estimates, family consultation, item sorting, and responsible disposal."
+        url="/services/estate-cleanout"
+        price="Starting at $300"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Estate Cleanout", url: "/services/estate-cleanout" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}

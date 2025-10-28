@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function ApplianceRemovalPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Appliance Removal"
+        description="Professional appliance removal services in Richmond, VA. Safe removal of refrigerators, washers, dryers, dishwashers, and all major appliances. Same-day service, eco-friendly disposal."
+        url="/services/appliance-removal"
+        price="Starting at $75"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Appliance Removal", url: "/services/appliance-removal" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}

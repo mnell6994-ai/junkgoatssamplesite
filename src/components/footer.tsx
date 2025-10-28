@@ -31,7 +31,10 @@ export default function Footer() {
               <li><Link href="/services/furniture-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Furniture Removal</Link></li>
               <li><Link href="/services/yard-waste-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Yard Waste Removal</Link></li>
               <li><Link href="/services/construction-debris" className="hover:text-[#FFA500] transition-colors font-semibold">Construction Debris</Link></li>
+              <li><Link href="/services/appliance-removal" className="hover:text-[#FFA500] transition-colors font-semibold">Appliance Removal</Link></li>
               <li><Link href="/services/estate-cleanout" className="hover:text-[#FFA500] transition-colors font-semibold">Estate Cleanout</Link></li>
+              <li><Link href="/services/commercial-cleanout" className="hover:text-[#FFA500] transition-colors font-semibold">Commercial Cleanout</Link></li>
+              <li><Link href="/services/office-cleanout" className="hover:text-[#FFA500] transition-colors font-semibold">Office Cleanout</Link></li>
             </ul>
           </div>
           <div>

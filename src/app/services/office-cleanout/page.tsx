@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function OfficeCleanoutPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Office Cleanout"
+        description="Professional office cleanout services in Richmond, VA. Complete office cleanouts, business relocation, office furniture removal, equipment disposal. Licensed and insured."
+        url="/services/office-cleanout"
+        price="Starting at $200"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Office Cleanout", url: "/services/office-cleanout" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}

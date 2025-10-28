@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function ConstructionDebrisPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Construction Debris Removal"
+        description="Professional construction debris removal services in Richmond, VA. Construction materials, concrete removal, heavy debris handling, contractor discounts. Licensed and insured."
+        url="/services/construction-debris"
+        price="Starting at $200"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Construction Debris", url: "/services/construction-debris" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}
@@ -330,8 +342,8 @@ export default function ConstructionDebrisPage() {
               </Card>
               <Card className="bg-white text-center p-6">
                 <CardContent className="p-4">
-                  <h4 className="text-xl font-bold text-[#dc2626] mb-3">Hazardous Materials</h4>
-                  <p className="text-gray-600">Proper handling and disposal of hazardous construction materials and debris</p>
+                  <h4 className="text-xl font-bold text-[#dc2626] mb-3">Safe Disposal</h4>
+                  <p className="text-gray-600">Environmentally responsible disposal of construction materials and debris</p>
                 </CardContent>
               </Card>
               <Card className="bg-white text-center p-6">

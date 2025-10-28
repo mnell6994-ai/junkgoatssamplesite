@@ -13,13 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://junkgoatsrichmond.com'),
   title: "Junk Goats Junk Removal | Professional Junk Removal Services in Richmond VA",
   description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
   keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com',
+  },
   openGraph: {
     title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
     description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
     type: "website",
+    url: 'https://junkgoatsrichmond.com',
+    siteName: 'Junk Goats Junk Removal',
+    locale: 'en_US',
     images: [
       {
         url: "/images/junk-goats-logo.png",
@@ -34,6 +41,8 @@ export const metadata: Metadata = {
     title: "Junk Goats Junk Removal - Professional Junk Removal Services in Richmond VA",
     description: "Professional junk removal services in Richmond, VA. Junk removal, furniture removal, estate cleanout, construction debris, and more. Licensed, insured, locally owned. Free estimates!",
     images: ["/images/junk-goats-logo.png"],
+    site: '@junkgoats',
+    creator: '@junkgoats',
   },
   robots: {
     index: true,
@@ -58,12 +67,19 @@ export default function RootLayout({
 }>) {
   const schemaMarkup = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
+    "@id": "https://junkgoatsrichmond.com/#business",
     "name": "Junk Goats Junk Removal",
     "url": "https://junkgoatsrichmond.com",
-    "logo": "/images/junk-goats-logo.png",
-    "description": "Professional junk removal services in Richmond, VA and surrounding areas",
-    "areaServed": ["Richmond, VA", "Henrico, VA", "Chesterfield, VA", "Midlothian, VA", "Mechanicsville, VA"],
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://junkgoatsrichmond.com/images/junk-goats-logo.png",
+      "width": 200,
+      "height": 60
+    },
+    "image": "https://junkgoatsrichmond.com/images/junk-goats-logo.png",
+    "description": "Professional junk removal services in Richmond, VA and surrounding areas. We offer furniture removal, estate cleanouts, construction debris removal, appliance removal, and more. Same-day service available.",
+    "priceRange": "$$",
     "telephone": "+1-804-494-7999",
     "email": "info@junkgoatsrichmond.com",
     "address": {
@@ -73,11 +89,139 @@ export default function RootLayout({
       "postalCode": "23219",
       "addressCountry": "US"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.5407,
+      "longitude": -77.4360
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Richmond",
+        "containedIn": {
+          "@type": "State",
+          "name": "Virginia"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Henrico",
+        "containedIn": {
+          "@type": "State",
+          "name": "Virginia"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Chesterfield",
+        "containedIn": {
+          "@type": "State",
+          "name": "Virginia"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Midlothian",
+        "containedIn": {
+          "@type": "State",
+          "name": "Virginia"
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Mechanicsville",
+        "containedIn": {
+          "@type": "State",
+          "name": "Virginia"
+        }
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "15:00"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/junkgoatsrichmond",
       "https://www.instagram.com/junkgoatsrichmond",
       "https://www.linkedin.com/company/junk-goats-junk-removal"
-    ]
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Junk Removal Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Junk Removal",
+            "description": "Complete junk removal services for residential and commercial properties"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Furniture Removal",
+            "description": "Professional furniture and mattress removal services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Estate Cleanout",
+            "description": "Complete estate cleanout services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Construction Debris Removal",
+            "description": "Construction debris and renovation cleanup"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Appliance Removal",
+            "description": "Safe appliance removal and disposal"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Yard Waste Removal",
+            "description": "Yard waste and organic debris removal"
+          }
+        }
+      ]
+    }
   };
 
   return (

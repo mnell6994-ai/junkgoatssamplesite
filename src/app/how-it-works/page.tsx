@@ -330,6 +330,18 @@ export default function HowItWorks() {
                   </p>
                 </CardContent>
               </Card>
+
+              <Card className="bg-white shadow-lg">
+                <CardContent className="p-8">
+                  <h4 className="text-lg md:text-xl font-bold text-[#dc2626] mb-4">Is there anything you do not take?</h4>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    We do not accept hazardous materials including chemicals, paints, asbestos, or any items classified as hazardous waste.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    For the safety of our team and to comply with environmental regulations, these materials require specialized handling and disposal. If you're unsure whether an item is considered hazardous, please give us a call and we'll be happy to discuss it with you.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function YardWasteRemovalPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Yard Waste Removal"
+        description="Professional yard waste removal services in Richmond, VA. Tree branches, leaves, grass clippings, brush removal, and yard cleanup. Eco-friendly disposal and composting options."
+        url="/services/yard-waste-removal"
+        price="Starting at $100"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Yard Waste Removal", url: "/services/yard-waste-removal" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}

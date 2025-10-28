@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function FurnitureRemovalPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Furniture Removal"
+        description="Professional furniture removal services in Richmond, VA. Safe removal of large furniture, sofas, tables, beds, and more. Same-day service, donation options, free estimates."
+        url="/services/furniture-removal"
+        price="Starting at $75"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Furniture Removal", url: "/services/furniture-removal" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}

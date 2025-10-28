@@ -68,15 +68,6 @@ export default function Header() {
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
-          
-          {/* Test Button */}
-          <button
-            onClick={() => setIsScrolled(!isScrolled)}
-            className="hidden md:block bg-red-500 text-white px-2 py-1 text-xs mr-2"
-          >
-            Test
-          </button>
-          
 
           <nav className="hidden md:flex gap-8">
             <div className="relative" ref={servicesDropdownRef}>

@@ -5,6 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, MapPin, Phone, Mail, Clock, Star, Shield, Award } from "lucide-react";
 import HeaderWorking from "@/components/header-working";
 import Footer from "@/components/footer";
+import ServiceSchema from "@/components/service-schema";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import dynamic from "next/dynamic";
 
 // Lazy load components
@@ -36,6 +38,16 @@ export default function JunkRemovalPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa]">
+      <ServiceSchema
+        name="Junk Removal"
+        description="Professional junk removal services in Richmond, VA. Complete junk removal for homes and businesses. Same-day service, eco-friendly disposal, free estimates. Licensed and insured."
+        url="/services/junk-removal"
+        price="Starting at $150"
+      />
+      <BreadcrumbSchema items={[
+        { name: "Services", url: "/services" },
+        { name: "Junk Removal", url: "/services/junk-removal" }
+      ]} />
       <HeaderWorking />
 
       {/* Hero Section */}
