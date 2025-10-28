@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 export default function HeaderWorking() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isLocationsOpen, setIsLocationsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,13 +127,54 @@ export default function HeaderWorking() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-[#1e40af] shadow-lg md:hidden z-40">
-            <div className="px-4 py-6 space-y-4">
-              <Link href="/services/junk-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Junk Removal</Link>
-              <Link href="/services/furniture-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Furniture Removal</Link>
-              <Link href="/services/yard-waste-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Yard Waste</Link>
-              <Link href="/services/construction-debris" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Construction Debris</Link>
-              <Link href="/services/appliance-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Appliance Removal</Link>
-              <Link href="/services/estate-cleanout" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Estate Cleanout</Link>
+            <div className="px-4 py-6 space-y-2">
+              {/* Services Dropdown */}
+              <div>
+                <button 
+                  className="w-full text-left text-white font-black uppercase tracking-wide flex items-center justify-between py-2"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                >
+                  SERVICES
+                  <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isServicesOpen && (
+                  <div className="mt-2 space-y-1 pl-4">
+                    <Link href="/services/junk-removal" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Junk Removal</Link>
+                    <Link href="/services/furniture-removal" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Furniture Removal</Link>
+                    <Link href="/services/yard-waste-removal" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Yard Waste</Link>
+                    <Link href="/services/construction-debris" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Construction Debris</Link>
+                    <Link href="/services/appliance-removal" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Appliance Removal</Link>
+                    <Link href="/services/estate-cleanout" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Estate Cleanout</Link>
+                    <Link href="/services/commercial-cleanout" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Commercial Cleanout</Link>
+                    <Link href="/services/office-cleanout" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Office Cleanout</Link>
+                  </div>
+                )}
+              </div>
+              
+              {/* Service Areas Dropdown */}
+              <div>
+                <button 
+                  className="w-full text-left text-white font-black uppercase tracking-wide flex items-center justify-between py-2"
+                  onClick={() => setIsLocationsOpen(!isLocationsOpen)}
+                >
+                  SERVICE AREAS
+                  <svg className={`w-4 h-4 transition-transform ${isLocationsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isLocationsOpen && (
+                  <div className="mt-2 space-y-1 pl-4">
+                    <Link href="/richmond" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Richmond, VA</Link>
+                    <Link href="/henrico" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Henrico, VA</Link>
+                    <Link href="/chesterfield" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Chesterfield, VA</Link>
+                    <Link href="/midlothian" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Midlothian, VA</Link>
+                    <Link href="/mechanicsville" className="block text-gray-200 hover:text-white py-1 text-sm" onClick={() => setIsMobileMenuOpen(false)}>Mechanicsville, VA</Link>
+                  </div>
+                )}
+              </div>
+              
               <Link href="/how-it-works" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link>
               <Link href="/contact" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             </div>
