@@ -97,9 +97,19 @@ export default function Header() {
                 return !prev;
               });
             }}
-            className="md:hidden text-white p-2 z-[9999] relative bg-red-500 hover:bg-red-600 border-2 border-yellow-400"
+            className="md:hidden"
             aria-label="Toggle mobile menu"
-            style={{ pointerEvents: 'auto', minWidth: '48px', minHeight: '48px' }}
+            style={{ 
+              pointerEvents: 'auto', 
+              minWidth: '48px', 
+              minHeight: '48px',
+              backgroundColor: 'red',
+              border: '2px solid yellow',
+              color: 'white',
+              padding: '8px',
+              zIndex: 9999,
+              position: 'relative'
+            }}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
