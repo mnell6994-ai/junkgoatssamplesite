@@ -13,6 +13,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const locationsDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
@@ -21,7 +22,12 @@ export default function Header() {
     if (locationsDropdownRef.current && !locationsDropdownRef.current.contains(event.target as Node)) {
       setIsLocationsOpen(false);
     }
-  }, []);
+    // Close mobile menu when clicking outside
+    const target = event.target as HTMLElement;
+    if (isMobileMenuOpen && !mobileMenuRef.current?.contains(target) && !target.closest('button[aria-label="Toggle mobile menu"]')) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside, { passive: true });
@@ -50,8 +56,8 @@ export default function Header() {
       isScrolled ? 'bg-[#1e40af] shadow-lg' : 'bg-transparent'
     }`} style={{ backgroundColor: isScrolled ? '#1e40af' : 'transparent' }}>
       <div className="w-full">
-        <div className="flex justify-between items-center w-full pl-4 pr-4">
-          <Link href="/" className="flex items-center">
+        <div className="flex justify-between items-center w-full px-4">
+          <Link href="/" className="flex items-center flex-shrink-0">
             <Image 
               src="/images/junk-goats-logo.png" 
               alt="Junk Goats Junk Removal" 
@@ -61,10 +67,12 @@ export default function Header() {
               priority
             />
           </Link>
+          
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white p-2 z-50 relative"
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -228,8 +236,8 @@ export default function Header() {
           
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-[#1e40af] shadow-lg md:hidden z-50">
-              <div className="px-4 py-6 space-y-4">
+            <div ref={mobileMenuRef} className="absolute top-full left-0 right-0 bg-[#1e40af] shadow-lg md:hidden z-40">
+              <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
                 {/* Mobile Services Dropdown */}
                 <div>
                   <button
