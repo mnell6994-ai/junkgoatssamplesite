@@ -113,8 +113,8 @@ const GoogleReviewsCarousel = memo(() => {
     <div className="mt-6 max-w-4xl mx-auto">
       <ReviewSchema reviews={schemaReviews} />
       <div className="flex justify-center">
-        <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#dc2626] transition-all duration-500 ease-in-out max-w-2xl w-full min-h-[320px] md:min-h-[280px] flex flex-col">
-          <div className="flex items-center mb-4">
+        <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#dc2626] transition-all duration-500 ease-in-out max-w-2xl w-full h-[320px] md:h-[280px] flex flex-col">
+          <div className="flex items-center mb-4 flex-shrink-0">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-current" />
@@ -122,10 +122,12 @@ const GoogleReviewsCarousel = memo(() => {
             </div>
             <span className="ml-2 text-sm font-semibold text-gray-600">Google Review</span>
           </div>
-          <p className="text-gray-700 italic mb-4 text-lg leading-relaxed flex-grow">
-            "{currentReview.text}"
-          </p>
-          <div className="flex items-center">
+          <div className="flex-grow overflow-hidden mb-4">
+            <p className="text-gray-700 italic text-lg leading-relaxed h-full overflow-y-auto">
+              "{currentReview.text}"
+            </p>
+          </div>
+          <div className="flex items-center flex-shrink-0">
             <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center mr-4">
               <span className="text-sm font-bold text-gray-600">{currentReview.initials}</span>
             </div>
