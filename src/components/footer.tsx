@@ -71,7 +71,7 @@ export default function Footer() {
             &copy; 2025 Junk Goats Junk Removal. All rights reserved.
           </p>
           <div className="flex justify-center gap-6 text-lg">
-            <Link href="/sitemap" className="hover:text-[#FFA500] transition-colors font-semibold">Sitemap</Link>
+            <Link href="/sitemap.xml" className="hover:text-[#FFA500] transition-colors font-semibold">Sitemap</Link>
             <Link href="/privacy" className="hover:text-[#FFA500] transition-colors font-semibold">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-[#FFA500] transition-colors font-semibold">Terms of Service</Link>
           </div>
