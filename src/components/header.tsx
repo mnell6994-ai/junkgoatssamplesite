@@ -97,9 +97,9 @@ export default function Header() {
                 return !prev;
               });
             }}
-            className="md:hidden text-white p-2 z-50 relative bg-red-500 hover:bg-red-600"
+            className="md:hidden text-white p-2 z-[9999] relative bg-red-500 hover:bg-red-600 border-2 border-yellow-400"
             aria-label="Toggle mobile menu"
-            style={{ pointerEvents: 'auto' }}
+            style={{ pointerEvents: 'auto', minWidth: '48px', minHeight: '48px' }}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
