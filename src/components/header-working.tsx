@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function HeaderWorking() {
   const [scrollY, setScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,11 +107,36 @@ export default function HeaderWorking() {
         </nav>
         
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-white p-2">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+        <button 
+          className="md:hidden text-white p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-[#1e40af] shadow-lg md:hidden z-40">
+            <div className="px-4 py-6 space-y-4">
+              <Link href="/services/junk-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Junk Removal</Link>
+              <Link href="/services/furniture-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Furniture Removal</Link>
+              <Link href="/services/yard-waste-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Yard Waste</Link>
+              <Link href="/services/construction-debris" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Construction Debris</Link>
+              <Link href="/services/appliance-removal" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Appliance Removal</Link>
+              <Link href="/services/estate-cleanout" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Estate Cleanout</Link>
+              <Link href="/how-it-works" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>How It Works</Link>
+              <Link href="/contact" className="block text-white font-black uppercase py-2" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+            </div>
+          </div>
+        )}
         
         <div className="hidden md:flex items-center gap-4">
           <a href="tel:+18044947999" className="flex items-center gap-2 text-white font-black uppercase tracking-wide italic">
