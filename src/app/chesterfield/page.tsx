@@ -358,6 +358,8 @@ export default function ChesterfieldPage() {
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
+                  loading="lazy"
+                  priority={false}
                 />
                 <div className="p-6">
                   <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Appliance Removal</h3>
@@ -436,6 +438,8 @@ export default function ChesterfieldPage() {
                   width={400}
                   height={250}
                   className="w-full h-48 object-cover"
+                  loading="lazy"
+                  priority={false}
                 />
                 <div className="p-6">
                   <h3 className="text-xl md:text-2xl font-bold text-[#dc2626] mb-3">Yard Waste Removal</h3>
