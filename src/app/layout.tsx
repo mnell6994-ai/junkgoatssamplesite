@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond",
   alternates: {
     canonical: 'https://junkgoatsrichmond.com',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com',
+      'en': 'https://junkgoatsrichmond.com',
+      'x-default': 'https://junkgoatsrichmond.com',
+    },
   },
   openGraph: {
     title: "Junk Goats Junk Removal - Richmond VA Junk Removal Services",

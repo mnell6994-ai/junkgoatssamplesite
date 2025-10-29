@@ -5,6 +5,14 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: "Terms of Service | Junk Goats Junk Removal Richmond VA",
   description: "Terms of Service for Junk Goats Junk Removal services in Richmond, VA. Read our service terms, conditions, and policies for junk removal services.",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/terms',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/terms',
+      'en': 'https://junkgoatsrichmond.com/terms',
+      'x-default': 'https://junkgoatsrichmond.com/terms',
+    },
+  },
 };
 
 export default function TermsPage() {

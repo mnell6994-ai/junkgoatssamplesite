@@ -23,7 +23,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Junk Removal Mechanicsville VA | Professional Junk Removal Services",
   description: "Professional junk removal services in Mechanicsville, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
-  keywords: "junk removal Mechanicsville VA, junk removal Mechanicsville Virginia, furniture removal Mechanicsville, estate cleanout Hanover County, construction debris Mechanicsville, appliance removal Mechanicsville Virginia"
+  keywords: "junk removal Mechanicsville VA, junk removal Mechanicsville Virginia, furniture removal Mechanicsville, estate cleanout Hanover County, construction debris Mechanicsville, appliance removal Mechanicsville Virginia",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/mechanicsville',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/mechanicsville',
+      'en': 'https://junkgoatsrichmond.com/mechanicsville',
+      'x-default': 'https://junkgoatsrichmond.com/mechanicsville',
+    },
+  },
 };
 
 export default function MechanicsvillePage() {

@@ -23,7 +23,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Junk Removal Henrico VA | Professional Junk Removal Services",
   description: "Professional junk removal services in Henrico County, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
-  keywords: "junk removal Henrico VA, junk removal Henrico County, furniture removal Glen Allen, estate cleanout Short Pump, construction debris Tuckahoe, appliance removal Henrico County Virginia"
+  keywords: "junk removal Henrico VA, junk removal Henrico County, furniture removal Glen Allen, estate cleanout Short Pump, construction debris Tuckahoe, appliance removal Henrico County Virginia",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/henrico',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/henrico',
+      'en': 'https://junkgoatsrichmond.com/henrico',
+      'x-default': 'https://junkgoatsrichmond.com/henrico',
+    },
+  },
 };
 
 export default function HenricoPage() {

@@ -23,7 +23,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Junk Removal Richmond VA | Professional Junk Removal Services",
   description: "Professional junk removal services in Richmond, VA. Same-day service for furniture, appliances, estate cleanouts & construction debris. Licensed & insured. Free estimates!",
-  keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond"
+  keywords: "junk removal Richmond VA, junk removal Richmond Virginia, furniture removal Richmond, estate cleanout Richmond, construction debris Richmond, appliance removal Richmond, yard waste Richmond, commercial cleanout Richmond",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/richmond',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/richmond',
+      'en': 'https://junkgoatsrichmond.com/richmond',
+      'x-default': 'https://junkgoatsrichmond.com/richmond',
+    },
+  },
 };
 
 export default function RichmondPage() {

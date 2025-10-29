@@ -22,7 +22,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Yard Waste Removal Richmond VA | Professional Yard Cleanup",
   description: "Professional yard waste removal services in Richmond, VA. Tree branches, leaves, grass clippings, brush removal & yard cleanup. Eco-friendly disposal & composting.",
-  keywords: "yard waste removal service, yard waste removal Richmond VA, tree branch removal, leaf removal, brush removal, yard cleanup, organic waste disposal"
+  keywords: "yard waste removal service, yard waste removal Richmond VA, tree branch removal, leaf removal, brush removal, yard cleanup, organic waste disposal",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/services/yard-waste-removal',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/services/yard-waste-removal',
+      'en': 'https://junkgoatsrichmond.com/services/yard-waste-removal',
+      'x-default': 'https://junkgoatsrichmond.com/services/yard-waste-removal',
+    },
+  },
 };
 
 export default function YardWasteRemovalPage() {

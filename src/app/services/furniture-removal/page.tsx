@@ -22,7 +22,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Furniture Removal Richmond VA | Professional Furniture Removal",
   description: "Professional furniture removal services in Richmond, VA. Safe removal of large furniture, sofas, tables, beds & more. Same-day service, donation options, free estimates.",
-  keywords: "furniture removal service, furniture removal Richmond VA, large furniture removal, sofa removal, bed removal, furniture disposal, furniture donation"
+  keywords: "furniture removal service, furniture removal Richmond VA, large furniture removal, sofa removal, bed removal, furniture disposal, furniture donation",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/services/furniture-removal',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/services/furniture-removal',
+      'en': 'https://junkgoatsrichmond.com/services/furniture-removal',
+      'x-default': 'https://junkgoatsrichmond.com/services/furniture-removal',
+    },
+  },
 };
 
 export default function FurnitureRemovalPage() {

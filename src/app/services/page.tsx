@@ -9,6 +9,14 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: "Junk Removal Services Richmond VA | Junk Goats",
   description: "Professional junk removal services in Richmond, VA. Furniture removal, yard waste, construction debris, estate cleanouts & more. Same-day service available!",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/services',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/services',
+      'en': 'https://junkgoatsrichmond.com/services',
+      'x-default': 'https://junkgoatsrichmond.com/services',
+    },
+  },
 };
 
 export default function ServicesPage() {

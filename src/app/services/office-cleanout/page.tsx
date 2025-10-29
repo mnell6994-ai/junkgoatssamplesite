@@ -22,7 +22,15 @@ const ContactFormSimple = dynamic(() => import("@/components/contact-form-simple
 export const metadata = {
   title: "Office Cleanout Richmond VA | Professional Office Cleanup",
   description: "Professional office cleanout services in Richmond, VA. Complete office cleanouts, business relocation, office furniture removal, equipment disposal. Licensed and insured.",
-  keywords: "office cleanout service, office cleanout Richmond VA, office cleanout company, office cleanout services, business relocation, office furniture removal"
+  keywords: "office cleanout service, office cleanout Richmond VA, office cleanout company, office cleanout services, business relocation, office furniture removal",
+  alternates: {
+    canonical: 'https://junkgoatsrichmond.com/services/office-cleanout',
+    languages: {
+      'en-US': 'https://junkgoatsrichmond.com/services/office-cleanout',
+      'en': 'https://junkgoatsrichmond.com/services/office-cleanout',
+      'x-default': 'https://junkgoatsrichmond.com/services/office-cleanout',
+    },
+  },
 };
 
 export default function OfficeCleanoutPage() {
