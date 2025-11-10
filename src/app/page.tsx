@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import GoogleReviewsCarousel from "@/components/google-reviews-carousel";
 import Footer from "@/components/footer";
 import AnimatedTruck from "@/components/animated-truck";
+import YouTubeLazyEmbed from "@/components/youtube-lazy-embed";
 // import HeaderTest from "@/components/header-test";
 
 // Lazy load heavy components
@@ -40,6 +41,16 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isLocationsOpen, setIsLocationsOpen] = useState(false);
+
+  // Helper function to determine if a video should be rendered
+  const shouldRenderVideo = useCallback((index: number) => {
+    const videosPerPage = isMobile ? 1 : 3;
+    const currentPage = currentVideoIndex;
+    const videoPage = Math.floor(index / videosPerPage);
+
+    // Render videos on current page and adjacent pages for smooth transitions
+    return Math.abs(videoPage - currentPage) <= 1;
+  }, [currentVideoIndex, isMobile]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -425,12 +436,14 @@ export default function Home() {
               </ul>
               
               <div className="mt-8 flex justify-center">
-                <Image 
+                <Image
                   src="/images/google-five-star-rating.png"
                   alt="Google Five Star Rating"
                   width={200}
                   height={100}
                   className="object-contain w-32 md:w-48 lg:w-56"
+                  loading="lazy"
+                  quality={75}
                 />
               </div>
               
@@ -485,12 +498,17 @@ export default function Home() {
               }
             ].map((location) => (
               <article key={location.name} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img 
-                  src={location.image}
-                  alt={location.alt}
-                  className="w-full h-48 object-cover"
-                  loading="lazy"
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={location.image}
+                    alt={location.alt}
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={75}
+                  />
+                </div>
                 <div className="p-4 md:p-6">
                   <h3 className="text-lg md:text-xl font-black text-[#1e40af] mb-3">{location.name}</h3>
                   <p className="text-sm md:text-base text-gray-600 mb-3">{location.description}</p>
@@ -524,19 +542,16 @@ export default function Home() {
               <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentVideoIndex * (100 / (isMobile ? 1 : 3))}%)` }}>
                 {testimonialVideos.map((video, index) => (
                   <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-2">
-                    <div className="aspect-video bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={`https://www.youtube.com/embed/${video.videoId}`}
+                    {shouldRenderVideo(index) ? (
+                      <YouTubeLazyEmbed
+                        videoId={video.videoId}
                         title={video.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="rounded-lg"
-                      ></iframe>
-                    </div>
-                </div>
+                        isVisible={true}
+                      />
+                    ) : (
+                      <div className="aspect-video bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden" />
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -600,6 +615,9 @@ export default function Home() {
                   width={400}
                   height={300}
                   className="w-full h-64 object-cover"
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-black text-gray-900 mb-2">Our Professional Team</h3>
@@ -618,6 +636,9 @@ export default function Home() {
                   width={400}
                   height={300}
                   className="w-full h-64 object-cover"
+                  loading="lazy"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-black text-gray-900 mb-2">Friendly Service</h3>
@@ -675,6 +696,9 @@ export default function Home() {
                       width={400}
                       height={300}
                       className="w-full h-64 object-cover"
+                      loading="lazy"
+                      quality={75}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </CardContent>
                 </Card>
