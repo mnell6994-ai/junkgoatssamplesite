@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
+    turbopack: {
+      root: '/Users/matthew/junkgoatssamplesite',
+    },
   },
 
   compiler: {

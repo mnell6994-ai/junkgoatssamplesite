@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, memo } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 
 interface YouTubeLazyEmbedProps {
   videoId: string;
@@ -9,65 +8,25 @@ interface YouTubeLazyEmbedProps {
   isVisible?: boolean;
 }
 
-const YouTubeLazyEmbed = memo(({ videoId, title, isVisible = false }: YouTubeLazyEmbedProps) => {
+const YouTubeLazyEmbed = ({ videoId, title, isVisible = false }: YouTubeLazyEmbedProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [shouldLoad, setShouldLoad] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Only set up intersection observer if the video is potentially visible in carousel
-    if (!isVisible) {
-      setShouldLoad(false);
-      setIsLoaded(false);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setShouldLoad(true);
-          }
-        });
-      },
-      {
-        rootMargin: '50px',
-        threshold: 0.1
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [isVisible]);
 
   const handlePlayClick = () => {
     setIsLoaded(true);
   };
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  // Use hqdefault which is more reliable and available for most videos
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   return (
-    <div
-      ref={containerRef}
-      className="aspect-video bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden relative"
-    >
+    <div className="aspect-video bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden relative">
       {!isLoaded ? (
         <>
-          <Image
+          <img
             src={thumbnailUrl}
             alt={title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
-            quality={75}
-            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
           />
           <button
             onClick={handlePlayClick}
@@ -95,13 +54,10 @@ const YouTubeLazyEmbed = memo(({ videoId, title, isVisible = false }: YouTubeLaz
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="rounded-lg"
-          loading="lazy"
         />
       )}
     </div>
   );
-});
-
-YouTubeLazyEmbed.displayName = 'YouTubeLazyEmbed';
+};
 
 export default YouTubeLazyEmbed;

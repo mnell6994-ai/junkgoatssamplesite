@@ -526,7 +526,7 @@ export default function Home() {
 
 
       {/* Customer Testimonials Section */}
-      <section className="py-16 bg-white">
+      <section id="testimonials-section" className="py-16 bg-white">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 uppercase tracking-tight">
